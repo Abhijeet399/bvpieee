@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "684839789760",
+    "firebase_url": "https://bvpieee-4ac2d.firebaseio.com",
+    "project_id": "bvpieee-4ac2d",
+    "storage_bucket": "bvpieee-4ac2d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684839789760:android:4a7f02dbb81dccca",
+        "android_client_info": {
+          "package_name": "com.jskgmail.bvpieee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "684839789760-lmlsl6ofk01f12de9esj1g9irb1k7p4i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jskgmail.bvpieee",
+            "certificate_hash": "4dd6f8c676ed528cf639a2785aec3fefd2c7c09f"
+          }
+        },
+        {
+          "client_id": "684839789760-u1fcu15ml6sb28udeocukh6fvpnl4ut9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRTKNAr8QaxUwod3to7_PHmr6uMzacZ44"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "684839789760-u1fcu15ml6sb28udeocukh6fvpnl4ut9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

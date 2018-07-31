@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        app:srcCompat="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/ieeemem"
+        android:layout_marginTop="90dp"
+        android:paddingStart="8dp"
+        android:text="You are logged in with E-mail id :"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/textView"
+        android:paddingBottom="4dp"
+        android:paddingEnd="4dp"
+        android:paddingStart="9dp"
+        android:paddingTop="4dp"
+        android:text="abc@gmail.com"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/ieeemem"
+        android:layout_width="361dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="146dp"
+        android:maxLines="10"
+        android:padding="8dp"
+        android:singleLine="false"
+        android:text="Note : You are not an IEEE member so can't access few things freely. If you this is a mistake, please contact us."
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="15sp" />
+</RelativeLayout>
