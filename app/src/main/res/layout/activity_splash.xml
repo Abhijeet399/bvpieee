@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-android:background="@drawable/white"
+android:background="@drawable/bbb"
 
         >
 
@@ -21,11 +21,11 @@ android:background="@drawable/white"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="45dp"
-            app:srcCompat="@drawable/ohh" />
+            app:srcCompat="@drawable/yuyu" />
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="273dp"
+            android:layout_width="278dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"

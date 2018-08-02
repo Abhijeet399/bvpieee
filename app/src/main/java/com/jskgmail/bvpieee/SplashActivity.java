@@ -45,7 +45,6 @@ public class SplashActivity extends AppCompatActivity {
     static File img5;
 
 
-
     private void downloadimgs() {
 
 
@@ -216,29 +215,29 @@ public class SplashActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        new Handler().postDelayed(new Runnable() {
+     //   new Handler().postDelayed(new Runnable() {
 
             /*
              * Showing splash screen with a timer. This will be useful when you
              * want to show case your app logo / company
              */
 
-            @Override
-            public void run() {
+       //     @Override
+       //     public void run() {
                 // This method will be executed once the timer is over
                 // Start your app main activity
 
                 mAuth.addAuthStateListener(mAuthListner);
-                finish();
+            //    finish();
                 // close this activity
             }
-        }, 1700);
+     //   }, 1700);
 
 
 
 
 
-    }
+   // }
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -268,19 +267,15 @@ public class SplashActivity extends AppCompatActivity {
 
                 rotateLoading.stop();
                 signIn();
-                finish();
+
+                startActivity(new Intent(SplashActivity.this, Main2Activity.class));
+
+
+                //   finish();
 
                 // close this activity
             }
         }, 2000);
-
-
-
-
-
-
-
-
 
 
 
@@ -298,7 +293,6 @@ public class SplashActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null) {
                     rotateLoading.stop();
-                    startActivity(new Intent(SplashActivity.this, Main2Activity.class));
 
                 }
             }
@@ -370,14 +364,7 @@ public class SplashActivity extends AppCompatActivity {
                             SharedPreferences.Editor editor= getSharedPreferences("ieee",MODE_PRIVATE).edit();
                             editor.putString("mail",user.getEmail());
 
-
                             editor.apply();
-
-
-
-
-
-
 
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("TAG", "signInWithCredential:success");
@@ -391,22 +378,10 @@ public class SplashActivity extends AppCompatActivity {
 //                            updateUI(null);
                         }
 
-                        // ...
                     }
                 });
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
