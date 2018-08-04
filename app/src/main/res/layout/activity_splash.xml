@@ -10,23 +10,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-android:background="@drawable/bbb"
+        android:background="@android:color/white"
 
         >
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="45dp"
-            app:srcCompat="@drawable/yuyu" />
-
-        <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="278dp"
-            android:layout_height="wrap_content"
+            android:layout_width="315dp"
+            android:layout_height="122dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="171dp"

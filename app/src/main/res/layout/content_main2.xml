@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/rl1"
                 android:layout_alignStart="@+id/textView32"
-                android:layout_marginBottom="-410dp"
+                android:layout_marginBottom="-433dp"
                 android:text="BVPIEEE CHAPTERS"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="16sp" />
@@ -93,7 +93,7 @@
                 android:layout_height="95dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="416dp">
+                android:layout_marginTop="433dp">
 
                 <LinearLayout
 
@@ -248,7 +248,7 @@
                 android:layout_height="95dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginBottom="354dp">
+                android:layout_marginBottom="338dp">
 
                 <LinearLayout
 
@@ -420,9 +420,8 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
+                android:layout_above="@+id/rl11"
                 android:layout_alignStart="@+id/textView32"
-                android:layout_marginBottom="457dp"
                 android:text="BVPIEEE STUDENT INTEREST GROUPS"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="16sp" />
@@ -434,16 +433,16 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignStart="@+id/textView32"
                 android:layout_marginTop="290dp"
-                android:text="BVPIEEE next event is :"
+                android:text="ANNOUNCEMENT"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="16sp" />
 
             <RelativeLayout
                 android:layout_width="356dp"
-                android:layout_height="70dp"
-                android:layout_above="@+id/textView22"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="15dp"
+                android:layout_height="74dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="321dp"
                 android:background="@android:color/white">
 
                 <TextView
@@ -452,29 +451,36 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
+                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="14dp"
                     android:layout_marginTop="11dp"
                     android:gravity="center"
-                    android:text="TextView"
-                    android:textSize="15sp" />
+                    android:text="RAS workshop on Raspberry PI"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/textView9"
-                    android:layout_width="30dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignStart="@+id/topic"
                     android:layout_below="@+id/topic"
                     android:padding="2dp"
-                    android:text="on" />
+                    android:text="on"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/topic"
+                    android:layout_marginStart="1dp"
                     android:layout_toEndOf="@+id/textView9"
                     android:padding="2dp"
-                    android:text="26 august" />
+                    android:text="26 august"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/by"
@@ -482,17 +488,24 @@
                     android:layout_height="wrap_content"
                     android:layout_alignEnd="@+id/topic"
                     android:layout_below="@+id/topic"
+                    android:layout_marginStart="1dp"
                     android:padding="2dp"
-                    android:text="TextView" />
+                    android:text="Mr. XYZ"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/textView14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/topic"
+                    android:layout_marginEnd="2dp"
                     android:layout_toStartOf="@+id/by"
                     android:padding="2dp"
-                    android:text="TextView" />
+                    android:text="by"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="15sp" />
+
             </RelativeLayout>
 
 

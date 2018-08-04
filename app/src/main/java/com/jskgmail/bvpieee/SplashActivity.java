@@ -227,6 +227,7 @@ public class SplashActivity extends AppCompatActivity {
                 // This method will be executed once the timer is over
                 // Start your app main activity
 
+        rotateLoading.start();
                 mAuth.addAuthStateListener(mAuthListner);
             //    finish();
                 // close this activity
@@ -268,10 +269,11 @@ public class SplashActivity extends AppCompatActivity {
                 rotateLoading.stop();
                 signIn();
 
-                startActivity(new Intent(SplashActivity.this, Main2Activity.class));
+              //  startActivity(new Intent(SplashActivity.this, Main2Activity.class));
 
 
-                //   finish();
+
+               // finish();
 
                 // close this activity
             }
@@ -292,7 +294,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null) {
-                    rotateLoading.stop();
+                   // rotateLoading.stop();
 
                 }
             }
@@ -338,6 +340,9 @@ public class SplashActivity extends AppCompatActivity {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if (result.isSuccess()) {
                 rotateLoading.stop();
+                 startActivity(new Intent(SplashActivity.this, Main2Activity.class));
+                finish();
+
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);

@@ -11,6 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="18dp"
         android:layout_marginTop="14dp"
+        android:paddingBottom="15dp"
         android:text="The content is locked for Non IEEE members."
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="16sp" />

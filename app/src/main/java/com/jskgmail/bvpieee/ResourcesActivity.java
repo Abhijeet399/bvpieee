@@ -1,13 +1,14 @@
 package com.jskgmail.bvpieee;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.MediaController;
-import android.widget.VideoView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.pierfrancescosoffritti.youtubeplayer.player.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.youtubeplayer.player.YouTubePlayer;
+import com.pierfrancescosoffritti.youtubeplayer.player.YouTubePlayerInitListener;
+import com.pierfrancescosoffritti.youtubeplayer.player.YouTubePlayerView;
 
 public class ResourcesActivity extends AppCompatActivity {
 
@@ -40,19 +41,7 @@ public class ResourcesActivity extends AppCompatActivity {
 
 
 
-        VideoView videoView = (VideoView) findViewById(R.id.videoView);
-
-        String vidAddress = "http://download.itcuties.com/teaser/itcuties-teaser-480.mp4";
-
-        Uri videoUri = Uri.parse(vidAddress);
-
-        MediaController mediaController = new MediaController(this); mediaController.setAnchorView(videoView); videoView.setMediaController(mediaController);
-
-        videoView.setVideoURI(videoUri); videoView.start();
-
-
-
-
+       go1();
 
 
 
@@ -63,4 +52,23 @@ public class ResourcesActivity extends AppCompatActivity {
 
 
     }
-}
+
+
+    void go1() {
+        YouTubePlayerView youTubePlayerView = findViewById(R.id.youtube_player_view);
+
+        youTubePlayerView.initialize(new YouTubePlayerInitListener() {
+            @Override
+            public void onInitSuccess(final YouTubePlayer initializedYouTubePlayer) {
+                initializedYouTubePlayer.addListener(new AbstractYouTubePlayerListener() {
+                    @Override
+                    public void onReady() {
+                        String videoId = "_LrlsXi2dC0";
+                        initializedYouTubePlayer.loadVideo(videoId, 0);
+                    }
+                });
+            }
+        }, true);
+
+    }
+    }
