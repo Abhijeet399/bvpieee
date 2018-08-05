@@ -310,6 +310,10 @@ public class Main2Activity extends AppCompatActivity
 
 
         }
+        else if (id == R.id.nav_gallery){
+            startActivity(new Intent(Main2Activity.this,AllEventsActivity.class));
+
+        }
         else if (id == R.id.spon) {
 
             LayoutInflater inflater = getLayoutInflater();

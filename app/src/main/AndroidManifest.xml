@@ -28,7 +28,9 @@
             android:label="BVPIEEE"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RasActivity" />
-        <activity android:name=".ResourcesActivity"></activity>
+        <activity android:name=".ResourcesActivity" />
+        <activity android:name=".VideosActivity" />
+        <activity android:name=".AllEventsActivity"></activity>
     </application>
 
 </manifest>
