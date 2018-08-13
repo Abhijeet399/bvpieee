@@ -6,24 +6,24 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_person_black_24dp"
             android:title="My Account" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_trending_up_black_24dp"
             android:title="Upcoming Events" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_message_black_24dp"
             android:title="Discussion Forum" />
         <item
             android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_highlight_black_24dp"
             android:title="Highlights" />
 
         <item
             android:id="@+id/ress"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_photo_library_black_24dp"
             android:title="Resources" />
     </group>
 
@@ -31,15 +31,15 @@
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_border_color_black_24dp"
                 android:title="About " />
             <item
                 android:id="@+id/spon"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_whatshot_black_24dp"
                 android:title="Our sponsors" />
             <item
                 android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_swap_calls_black_24dp"
                 android:title="Contact us" />
         </menu>
     </item>

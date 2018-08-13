@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
 
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,280 +11,307 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="700dp">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_height="1dp"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/c"
-            android:layout_marginTop="10dp"
-            android:gravity="center">
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="41dp"
+            android:background="@color/colorPrimaryDark"
+           />
 
-        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="700dp"
+            android:layout_marginTop="50dp">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/cc"
-            android:layout_width="372dp"
-            android:layout_height="92dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/slider"
-            android:layout_marginStart="11dp"
-            android:padding="5dp"
-            app:cardCornerRadius="3dp"
-            app:cardElevation="2dp">
-
-            <TextView
-                android:id="@+id/chaptertexc"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginBottom="27dp"
-                android:layout_marginLeft="6dp"
-                android:layout_marginRight="6dp"
-                android:layout_marginTop="5dp"
-                android:background="@android:color/holo_green_light"
-                android:gravity="center"
+                android:layout_below="@+id/reso"
+                android:layout_marginTop="10dp"
+                android:gravity="center">
+
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/event"
+                android:layout_width="372dp"
+                android:layout_height="92dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/slider"
+                android:layout_marginStart="11dp"
                 android:padding="5dp"
-                android:text="EVENTS AND WORKSHOPS"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
+                app:cardCornerRadius="3dp"
+                app:cardElevation="2dp">
 
-        </android.support.v7.widget.CardView>
+                <TextView
+                    android:id="@+id/chaptertexc"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="27dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@android:color/holo_green_light"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="EVENTS AND WORKSHOPS"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
+
+            </android.support.v7.widget.CardView>
 
 
-        <com.daimajia.slider.library.SliderLayout
-            android:id="@+id/slider"
+            <com.daimajia.slider.library.SliderLayout
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+
+
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView32"
+                android:padding="8dp"
+                custom:auto_cycle="true"
+                custom:indicator_visibility="visible"
+                custom:pager_animation="Accordion"
+                custom:pager_animation_span="1100">
+
+            </com.daimajia.slider.library.SliderLayout>
+
+            <com.daimajia.slider.library.Indicators.PagerIndicator
+                android:id="@+id/custom_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                custom:selected_color="#0095BF"
+                custom:selected_drawable="@drawable/ic_menu_send"
+                custom:selected_height="6dp"
+                custom:selected_padding_left="5dp"
+                custom:selected_padding_right="5dp"
+                custom:selected_width="6dp"
+                custom:shape="oval"
+                custom:unselected_color="#55333333"
+                custom:unselected_height="6dp"
+                custom:unselected_padding_left="5dp"
+                custom:unselected_padding_right="5dp"
+                custom:unselected_width="6dp"
+
+                />
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/reso"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/event"
+                android:layout_marginTop="303dp"
+                android:padding="5dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="122dp"
+                    android:background="@color/colorAccent"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/chaptertext"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/eagle_lake"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        app:srcCompat="@drawable/ic_slow_motion_video_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="116dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_below="@+id/chaptertext"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginTop="11dp"
+                        android:gravity="center"
+                        android:paddingBottom="7dp"
+                        android:text="RESOURCES"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/discuss"
+                android:layout_width="177dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/event"
+                android:layout_alignTop="@+id/reso"
+                android:layout_marginEnd="9dp"
+                android:padding="5dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="122dp"
+                    android:background="@android:color/holo_blue_dark">
+
+                    <ImageView
+                        android:id="@+id/chaptertext1"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="13dp"
+                        android:fontFamily="@font/eagle_lake"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        app:srcCompat="@drawable/ic_chat_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/textView131"
+                        android:layout_width="wrap_content"
+                        android:layout_height="31dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_below="@+id/chaptertext1"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="9dp"
+                        android:layout_marginTop="11dp"
+                        android:gravity="center"
+                        android:text="DISCUSSION FORUM"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/abt"
+                android:layout_width="174dp"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/event"
+                android:layout_below="@+id/reso"
+                android:layout_marginBottom="136dp"
+                android:layout_marginTop="19dp"
+                android:padding="5dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="122dp"
+                    android:background="@android:color/holo_purple">
+
+                    <ImageView
+                        android:id="@+id/chaptertext12"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="13dp"
+                        android:fontFamily="@font/eagle_lake"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        app:srcCompat="@android:drawable/ic_dialog_info" />
+
+                    <TextView
+                        android:id="@+id/textView1313"
+                        android:layout_width="wrap_content"
+                        android:layout_height="31dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_below="@+id/chaptertext12"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="9dp"
+                        android:layout_marginTop="11dp"
+                        android:gravity="center"
+                        android:text="ABOUT CHAPTER"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/fb"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/event"
+                android:layout_alignTop="@+id/abt"
+                android:layout_marginEnd="9dp"
+                android:padding="5dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="2dp">
+
+                <RelativeLayout
+                    android:layout_width="181dp"
+                    android:layout_height="122dp"
+                    android:background="@android:color/holo_orange_light">
+
+                    <ImageView
+                        android:id="@+id/chaptertext123"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="13dp"
+                        android:fontFamily="@font/eagle_lake"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        app:srcCompat="@drawable/fbg" />
+
+                    <TextView
+                        android:id="@+id/textVie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="31dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_below="@+id/chaptertext123"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="9dp"
+                        android:layout_marginTop="11dp"
+                        android:gravity="center"
+                        android:text="FB PAGE"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/chapname"
             android:layout_width="match_parent"
-            android:layout_height="190dp"
-
-
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView32"
-            android:padding="8dp"
-            custom:auto_cycle="true"
-            custom:indicator_visibility="visible"
-            custom:pager_animation="Accordion"
-            custom:pager_animation_span="1100">
-
-        </com.daimajia.slider.library.SliderLayout>
-
-        <com.daimajia.slider.library.Indicators.PagerIndicator
-            android:id="@+id/custom_indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
-            android:gravity="center"
-            custom:selected_color="#0095BF"
-            custom:selected_drawable="@drawable/ic_menu_send"
-            custom:selected_height="6dp"
-            custom:selected_padding_left="5dp"
-            custom:selected_padding_right="5dp"
-            custom:selected_width="6dp"
-            custom:shape="oval"
-            custom:unselected_color="#55333333"
-            custom:unselected_height="6dp"
-            custom:unselected_padding_left="5dp"
-            custom:unselected_padding_right="5dp"
-            custom:unselected_width="6dp"
-
-            />
-
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/c"
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/cc"
-            android:layout_marginTop="303dp"
-            android:padding="5dp"
-            app:cardCornerRadius="3dp"
-            app:cardElevation="2dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="122dp"
-                android:background="@color/colorAccent"
-                android:padding="5dp">
-
-                <ImageView
-                    android:id="@+id/chaptertext"
-                    android:layout_width="58dp"
-                    android:layout_height="58dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="12dp"
-                    android:fontFamily="@font/eagle_lake"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    app:srcCompat="@drawable/ic_slow_motion_video_black_24dp" />
-
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="116dp"
-                    android:layout_height="35dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_below="@+id/chaptertext"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="6dp"
-                    android:layout_marginTop="11dp"
-                    android:gravity="center"
-                    android:paddingBottom="7dp"
-                    android:text="RESOURCES"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="@android:color/white"
-                    android:textSize="16sp" />
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
-
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/hgc"
-            android:layout_width="177dp"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/cc"
-            android:layout_alignTop="@+id/c"
-            android:layout_marginEnd="9dp"
-            android:padding="5dp"
-            app:cardCornerRadius="3dp"
-            app:cardElevation="2dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="122dp"
-                android:background="@android:color/holo_blue_dark">
-
-                <ImageView
-                    android:id="@+id/chaptertext1"
-                    android:layout_width="58dp"
-                    android:layout_height="58dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="13dp"
-                    android:fontFamily="@font/eagle_lake"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    app:srcCompat="@drawable/ic_chat_black_24dp" />
-
-                <TextView
-                    android:id="@+id/textView131"
-                    android:layout_width="wrap_content"
-                    android:layout_height="31dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_below="@+id/chaptertext1"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="9dp"
-                    android:layout_marginTop="11dp"
-                    android:gravity="center"
-                    android:text="DISCUSSION FORUM"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="@android:color/white"
-                    android:textSize="16sp" />
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
-
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/hg1c"
-            android:layout_width="174dp"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/cc"
-            android:layout_below="@+id/c"
-            android:layout_marginBottom="136dp"
-            android:layout_marginTop="19dp"
-            android:padding="5dp"
-            app:cardCornerRadius="3dp"
-            app:cardElevation="2dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="122dp"
-                android:background="@android:color/holo_purple">
-
-                <ImageView
-                    android:id="@+id/chaptertext12"
-                    android:layout_width="58dp"
-                    android:layout_height="58dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="13dp"
-                    android:fontFamily="@font/eagle_lake"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    app:srcCompat="@android:drawable/ic_dialog_info" />
-
-                <TextView
-                    android:id="@+id/textView1313"
-                    android:layout_width="wrap_content"
-                    android:layout_height="31dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_below="@+id/chaptertext12"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="9dp"
-                    android:layout_marginTop="11dp"
-                    android:gravity="center"
-                    android:text="ABOUT CHAPTER"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="@android:color/white"
-                    android:textSize="16sp" />
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
-
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/hg1c5"
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/cc"
-            android:layout_alignTop="@+id/hg1c"
-            android:layout_marginEnd="9dp"
-            android:padding="5dp"
-            app:cardCornerRadius="3dp"
-            app:cardElevation="2dp">
-
-            <RelativeLayout
-                android:layout_width="181dp"
-                android:layout_height="122dp"
-                android:background="@android:color/holo_orange_light">
-
-                <ImageView
-                    android:id="@+id/chaptertext123"
-                    android:layout_width="58dp"
-                    android:layout_height="58dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="13dp"
-                    android:fontFamily="@font/eagle_lake"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    app:srcCompat="@drawable/fbg" />
-
-                <TextView
-                    android:id="@+id/textVie"
-                    android:layout_width="wrap_content"
-                    android:layout_height="31dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_below="@+id/chaptertext123"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="9dp"
-                    android:layout_marginTop="11dp"
-                    android:gravity="center"
-                    android:text="FB PAGE"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="@android:color/white"
-                    android:textSize="16sp" />
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
-
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="COMPUTER SOCIETY"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="15sp" />
     </RelativeLayout>
 </ScrollView>

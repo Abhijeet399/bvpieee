@@ -5,14 +5,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -55,6 +54,15 @@ public class Main2Activity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+
+
+
+
+
         nextevent();
 
         SharedPreferences prefs = getSharedPreferences("ieee",MODE_PRIVATE);
@@ -85,14 +93,7 @@ public class Main2Activity extends AppCompatActivity
 
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.history);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -115,8 +116,16 @@ public class Main2Activity extends AppCompatActivity
 
         HashMap<String, Integer> file_maps = new HashMap<>();
 
-        file_maps.put("Latest ws", R.drawable.codex);
-        file_maps.put("Latest ws", R.drawable.codex);
+        file_maps.put("BVPIEE-CS workshop", R.drawable.h1);
+        file_maps.put("BVPIEE-RAS", R.drawable.h2);
+        file_maps.put("BVPIEE-RAS ", R.drawable.h3);
+        file_maps.put("FOC", R.drawable.foc171);
+        file_maps.put("Fervour-X", R.drawable.fervour1);
+        file_maps.put("BVPIEE-RAS  ", R.drawable.h6);
+        file_maps.put(" BVPIEE-RAS ", R.drawable.h7);
+        file_maps.put("BVEST", R.drawable.bvest1);
+        file_maps.put("Fervour-X ", R.drawable.fervour2);
+
 
         for (String name : file_maps.keySet()) {
             TextSliderView textSliderView = new TextSliderView(this);
@@ -195,7 +204,66 @@ public class Main2Activity extends AppCompatActivity
             }
         });
 
+        LinearLayout codex=findViewById(R.id.codex);
+        codex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                chapterno=6;
+                Intent intent=new Intent(Main2Activity.this,RasActivity.class);
+                startActivity(intent);
+            }
+        });
 
+        LinearLayout drishti=findViewById(R.id.drishti);
+        drishti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                chapterno=7;
+                Intent intent=new Intent(Main2Activity.this,RasActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        LinearLayout rau=findViewById(R.id.rau);
+        rau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                chapterno=8;
+                Intent intent=new Intent(Main2Activity.this,RasActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        LinearLayout ecell=findViewById(R.id.ecell);
+        ecell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                chapterno=9;
+                Intent intent=new Intent(Main2Activity.this,RasActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        LinearLayout gamma=findViewById(R.id.gamma);
+        gamma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                chapterno=10;
+                Intent intent=new Intent(Main2Activity.this,RasActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        LinearLayout bqc=findViewById(R.id.bqc);
+        bqc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                chapterno=11;
+                Intent intent=new Intent(Main2Activity.this,RasActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
@@ -303,10 +371,14 @@ public class Main2Activity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_slideshow) {
+            startActivity(new Intent(Main2Activity.this,MainChatActivity.class));
+
+
 
         } else if (id == R.id.nav_manage) {
 
 
+            startActivity(new Intent(Main2Activity.this,Main3Activity.class));
 
 
         }

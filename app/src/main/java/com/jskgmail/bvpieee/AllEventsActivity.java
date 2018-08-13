@@ -1,5 +1,6 @@
 package com.jskgmail.bvpieee;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,12 @@ String TAG="ALLEVENTS";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_events);
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_black_24dp);
+        actionBar.setDisplayShowHomeEnabled(true);
+
         final ListView listView= (ListView) findViewById(R.id.lv);
         final ArrayList<String> arrayList1=new ArrayList<>();
         final ArrayList<String> arrayList2=new ArrayList<>();
