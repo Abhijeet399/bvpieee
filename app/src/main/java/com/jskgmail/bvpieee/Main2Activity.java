@@ -22,6 +22,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
@@ -34,6 +35,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.StorageReference;
+import com.wajahatkarim3.easyflipview.EasyFlipView;
 
 import java.util.HashMap;
 
@@ -45,7 +47,7 @@ public class Main2Activity extends AppCompatActivity
     static int chapterno;
     static   int verified_ieee=0;
     private StorageReference mStorageRef;
-
+    RelativeLayout info_announce;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,8 @@ public class Main2Activity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        info_announce=findViewById(R.id.rrr);
 
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -77,21 +81,38 @@ public class Main2Activity extends AppCompatActivity
 
 
         SharedPreferences prefs1 = getSharedPreferences("nxtevent",MODE_PRIVATE);
-        String by = prefs1.getString("by", "N.A.");
+        String desc = prefs1.getString("desc", "N.A.");
         String date = prefs1.getString("date", "11/08/2018");
         String time = prefs1.getString("time", "6:30 PM");
         String topic = prefs1.getString("topic", "Deep Learning");
-
       //  TextView byy=findViewById(R.id.by);
-        TextView datee=findViewById(R.id.date);
-     //   TextView timee=findViewById(R.id.time);
-        TextView topicc=findViewById(R.id.topic);
 
+        TextView datee=findViewById(R.id.date);
+        TextView timee=findViewById(R.id.time);
+        TextView topicc=findViewById(R.id.topic);
+        TextView desc_txt=findViewById(R.id.desc);
+
+        desc_txt.setText(desc);
         datee.setText(date);
       //  timee.setText(time);
         topicc.setText(topic);
+        timee.setText(time);
 
+        EasyFlipView easyFlipView = (EasyFlipView) findViewById(R.id.easyflip);
+     //   EasyFlipView.FlipState flipSide = easyFlipView.getCurrentFlipState();
 
+        easyFlipView.flipTheView();
+        easyFlipView.setOnFlipListener(new EasyFlipView.OnFlipAnimationListener() {
+            @Override
+            public void onViewFlipCompleted(EasyFlipView flipView, EasyFlipView.FlipState newCurrentSide)
+            {
+
+                // ...
+                // Your code goes here
+                // ...
+
+            }
+        });
 
 
 
@@ -103,9 +124,6 @@ public class Main2Activity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
-
 
 
 
@@ -157,6 +175,7 @@ public class Main2Activity extends AppCompatActivity
                 chapterno=1;
                 Intent intent=new Intent(Main2Activity.this,RasActivity.class);
                 startActivity(intent);
+
             }
         });
 
@@ -371,8 +390,35 @@ public class Main2Activity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_slideshow) {
-            startActivity(new Intent(Main2Activity.this,MainChatActivity.class));
 
+            if (verified_ieee==0)
+            {
+                LayoutInflater inflater = getLayoutInflater();
+                View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+
+                // this is set the view from XML inside AlertDialog
+                alert.setView(alertLayout);
+                alert.setTitle("Content locked ");
+                alert.setIcon(R.drawable.ic_lock_black_24dp);
+
+
+
+
+                AlertDialog dialog = alert.create();
+                dialog.show();
+
+            }
+            else
+
+
+            {
+                Intent i = new Intent(Main2Activity.this, MainChatActivity.class);
+                i.putExtra("forum", "gen");
+                startActivity(i);
+
+            }
 
 
         } else if (id == R.id.nav_manage) {
@@ -592,12 +638,14 @@ if(value.equals(apnamail))   {
 void nextevent()
 {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+
     DatabaseReference myRef = database.getReference("Next event");
 
-    final String[] nxt_by = new String[1];
     final String[] nxt_date = new String[1];
     final String[] nxt_time = new String[1];
     final String[] nxt_topic = new String[1];
+    final String[] nxt_desc = new String[1];
 
     //   myRef.child("1").setValue("jsk1961998@gmail.com");
     //   myRef.child("2").setValue("82gurcharansingh@gmail.com");
@@ -608,23 +656,36 @@ void nextevent()
             // This method is called once with the initial value and again
             // whenever data at this location is updated.
             for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()) {
-                if (dataSnapshot1.getKey().equals("by"))
-                    nxt_by[0] = dataSnapshot1.getValue(String.class);
+
                 if (dataSnapshot1.getKey().equals("date"))
                     nxt_date[0] = dataSnapshot1.getValue(String.class);
                  if (dataSnapshot1.getKey().equals("time"))
                      nxt_time[0] = dataSnapshot1.getValue(String.class);
                  if (dataSnapshot1.getKey().equals("topic"))
                      nxt_topic[0] = dataSnapshot1.getValue(String.class);
+                if (dataSnapshot1.getKey().equals("desc"))
+                    nxt_desc[0] = dataSnapshot1.getValue(String.class);
 
 
                  SharedPreferences.Editor editor = getSharedPreferences("nxtevent", MODE_PRIVATE).edit();
-                 editor.putString("by", String.valueOf(nxt_by[0]));
                 editor.putString("date", String.valueOf(nxt_date[0]));
                 editor.putString("time", String.valueOf(nxt_time[0]));
                 editor.putString("topic", String.valueOf(nxt_topic[0]));
+                editor.putString("desac", String.valueOf(nxt_desc[0]));
+
                 editor.apply();
 
+
+                TextView datee=findViewById(R.id.date);
+                TextView timee=findViewById(R.id.time);
+                TextView topicc=findViewById(R.id.topic);
+                TextView desc_txt=findViewById(R.id.desc);
+
+                desc_txt.setText(nxt_desc[0]);
+                datee.setText(nxt_date[0]);
+                //  timee.setText(time);
+                topicc.setText(nxt_topic[0]);
+                timee.setText(nxt_time[0]);
 
 
             }

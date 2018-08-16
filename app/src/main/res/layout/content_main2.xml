@@ -455,69 +455,25 @@
                 android:layout_marginTop="321dp"
                 android:background="@android:color/white">
 
-                <TextView
-                    android:id="@+id/topic"
-                    android:layout_width="326dp"
+                <com.wajahatkarim3.easyflipview.EasyFlipView
+                    android:id="@+id/easyflip"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginTop="11dp"
-                    android:gravity="center"
-                    android:text="RAS workshop on Raspberry PI"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textSize="16sp" />
+                    app:flipDuration="400"
+                    app:flipEnabled="true"
+                    app:flipFrom="front"
+                    app:flipOnTouch="true"
+                    app:flipType="vertical">
 
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/topic"
-                    android:layout_below="@+id/topic"
-                    android:padding="2dp"
-                    android:text="on"
-                    android:textAppearance="@style/TextAppearance.AppCompat"
-                    android:textSize="15sp" />
+                    <!-- Back Layout Goes Here -->
+                    <include layout="@layout/flash_card_layout_front" />
 
-                <TextView
-                    android:id="@+id/date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/topic"
-                    android:layout_marginStart="1dp"
-                    android:layout_toEndOf="@+id/textView9"
-                    android:padding="2dp"
-                    android:text="26 august"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textSize="15sp" />
+                    <!-- Front Layout Goes Here -->
+                    <include layout="@layout/flash_card_layout_back" />
 
-                <TextView
-                    android:id="@+id/by"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignEnd="@+id/topic"
-                    android:layout_below="@+id/topic"
-                    android:layout_marginStart="1dp"
-                    android:padding="2dp"
-                    android:text="Mr. XYZ"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/textView14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/topic"
-                    android:layout_marginEnd="2dp"
-                    android:layout_toStartOf="@+id/by"
-                    android:padding="2dp"
-                    android:text="by"
-                    android:textAppearance="@style/TextAppearance.AppCompat"
-                    android:textSize="15sp" />
+                </com.wajahatkarim3.easyflipview.EasyFlipView>
 
             </RelativeLayout>
-
 
 
         </RelativeLayout>

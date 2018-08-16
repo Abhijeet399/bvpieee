@@ -34,7 +34,7 @@ public class AboutchapActivity extends AppCompatActivity {
         }
         else  if(Main2Activity.chapterno==3)
         {            title.setText("Women In Engineering");
-            img.setImageResource(R.drawable.wiea);
+            img.setImageResource(R.drawable.wie);
             text.setText("I Change The World. I Am An Engineer.\n" +
                     "IEEE WIE is one of the world’s leaders in changing the face of engineering. Our global network connects over 20,000 members in over 100 countries to advance women in technology at all points in their life and career. IEEE WIE members make lifelong friendships, acquire influential mentors, and make a difference for the benefit of humanity.");
         }

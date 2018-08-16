@@ -56,12 +56,17 @@ public class chatListAdapter extends BaseAdapter {
         }
     };
 
-    public chatListAdapter(Activity activity, DatabaseReference ref, String name) {
+    public chatListAdapter(Activity activity, DatabaseReference ref, String name,String society) {
 
         mActivity = activity;
         mDisplayName = name;
         // common error: typo in the db location. Needs to match what's in MainChatActivity.
-        mDatabaseReference = ref.child("messages");
+
+
+        mDatabaseReference = ref.child(society);
+
+
+
         mDatabaseReference.addChildEventListener(mListener);
 
         mSnapshotList = new ArrayList<>();

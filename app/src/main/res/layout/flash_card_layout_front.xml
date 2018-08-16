@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/topic"
+        android:layout_width="326dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="11dp"
+        android:gravity="center"
+        android:text="RAS workshop on Raspberry PI"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/topic"
+        android:layout_below="@+id/topic"
+        android:padding="2dp"
+        android:text="on"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topic"
+        android:layout_marginStart="1dp"
+        android:layout_toEndOf="@+id/textView9"
+        android:padding="2dp"
+        android:text="26 august"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/topic"
+        android:layout_below="@+id/topic"
+        android:layout_marginStart="1dp"
+        android:padding="2dp"
+        android:text="5 pm"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topic"
+        android:layout_marginEnd="2dp"
+        android:layout_toStartOf="@+id/time"
+        android:padding="2dp"
+        android:text="at"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="15sp" />
+
+</RelativeLayout>

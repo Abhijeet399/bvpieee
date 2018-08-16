@@ -11,7 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
         <activity
             android:name=".SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -31,18 +30,18 @@
         <activity android:name=".RasActivity">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".MainActivity" />
+            android:value=".Main2Activity" />
         </activity>
 
         <activity android:name=".ResourcesActivity">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".MainActivity" />
+            android:value=".Main2Activity" />
     </activity>
         <activity android:name=".MainChatActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Main2Activity" />
         </activity>
         <activity android:name=".VideosActivity" >
             <meta-data
@@ -52,12 +51,12 @@
         <activity android:name=".AllEventsActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Main2Activity" />
         </activity>
         <activity android:name=".Main3Activity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Main2Activity" />
         </activity>
         <activity android:name=".AboutchapActivity">
             <meta-data

@@ -60,12 +60,7 @@ CardView dis=findViewById(R.id.discuss);
                 startActivity(new Intent(RasActivity.this,ResourcesActivity.class));
             }
         });
-        dis.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(RasActivity.this,MainChatActivity.class));
-            }
-        });
+
 
         abt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,8 +81,9 @@ CardView dis=findViewById(R.id.discuss);
 
         if (Main2Activity.chapterno==1){
             //chaptertext.setText("The Robotics and Automation Society (BVPIEEE RAS) is a professional society that supports the development and the exchange of scientific knowledge in the fields of robotics and automation, including applied and theoretical issues. The RAS chapter was founded in 2014 by Shivam Bhardwaj . Over the years, it has organized several competitions like Robo Soccor, Robotic Guardians of the Galaxy, Robotic Mazes, Arcades, Robo Rugby etc. which saw an overwhelming participation. It has fostered students for inspiring them to pursue further studies in robotics and related fields from top universities like New York University, and carved students who were winning faces of several national and international competitions like eYantra and Celestini. \n\nTo know more about the events and activities conducted by BVPIEEE-RAS, refer to our past events page.");
-            file_maps.put("The Robotics and Automation Society (BVPIEEE RAS)", R.drawable.codex);
-            file_maps.put("The Robotics and Automation Society (BVPIEEE RAS) ", R.drawable.codex);
+            file_maps.put("The Robotics and Automation Society (BVPIEEE RAS)", R.drawable.ras1p);
+            file_maps.put("The Robotics and Automation Society (BVPIEEE RAS) ", R.drawable.ras2p);
+            file_maps.put("The Robotics and Automation Society (BVPIEEE RAS)  ", R.drawable.ras3p);
 
             chaptext.setText("The Robotics and Automation Society (RAS)");
 
@@ -102,13 +98,22 @@ CardView dis=findViewById(R.id.discuss);
                     startActivity(facebookIntent);
                 }
             });
-
+            dis.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    i.putExtra("forum", "ras");
+                    startActivity(i);
+                }
+            });
         }
         else
         if (Main2Activity.chapterno==2){
             //  chaptertext.setText("BVPIEEE Computer Society (sometimes abbreviated Computer Society or CS) is a professional society of IEEE. Its purpose and scope is “to advance the theory, practice, and application of computer and information processing science and technology” and the “professional standing of its members. As they say, computer and technology go hand in hand with development, this chapter aims to provide opportunities in the fields of research for new technologies like cloud storage, big data and artificial intelligence. The true focus is to harness the curiosity of the budding engineers and steer their way towards a more research and experiment based environment. Various hackathons and coding competitions are also organised by this chapter.\n\nTo know more about the events and activities conducted by BVPIEEE-CS, refer to our past events page.");
-            file_maps.put("BVPIEEE Computer Society", R.drawable.h1);
-            file_maps.put("BVPIEEE Computer Society ", R.drawable.cs2);
+            file_maps.put("BVPIEEE Computer Society", R.drawable.cs2p);
+            file_maps.put("BVPIEEE Computer Society  ", R.drawable.cs3p);
+            file_maps.put("BVPIEEE Computer Society ", R.drawable.csa);
+
             chaptext.setText("Computer Society (CS)");
 
             fb.setOnClickListener(new View.OnClickListener() {
@@ -122,13 +127,22 @@ CardView dis=findViewById(R.id.discuss);
                     startActivity(facebookIntent);
                 }
             });
+            dis.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    i.putExtra("forum", "cs");
+                    startActivity(i);
+                }
+            });
 
         }
         else
         if (Main2Activity.chapterno==4){
             //  chaptertext.setText("IAS enriches both its individual members and the industry as a whole through the sharing of specific industry-related solutions. The scope of the Industry Applications Society is the advancement of the theory and practice of electrical and electronic engineering in the development, design, manufacture & application of electrical systems, apparatus, devices & controls to the processes and equipment of industry & commerce; the promotion of safe, reliable and economic installations; industry leadership in energy conservation and environmental, health, and safety issues; the creation of voluntary engineering standards and recommended practices, and the professional development of its membership.\n\nTo know more about the events and activities conducted by BVPIEEE-IAS, refer to our past events page.");
-            file_maps.put("BVPIEEE-IAS", R.drawable.codex);
-            file_maps.put("BVPIEEE-IAS ", R.drawable.codex);
+            file_maps.put("BVPIEEE-IAS", R.drawable.ias2p);
+            file_maps.put("BVPIEEE-IAS ", R.drawable.ias4p);
+            file_maps.put("BVPIEEE-IAS  ", R.drawable.ias1p);
 
             chaptext.setText("Industry Applications Society (IAS)");
 
@@ -143,13 +157,20 @@ CardView dis=findViewById(R.id.discuss);
                     startActivity(facebookIntent);
                 }
             });
-
+            dis.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    i.putExtra("forum", "ias");
+                    startActivity(i);
+                }
+            });
         }
         else
         if (Main2Activity.chapterno==5){
             //  chaptertext.setText("BVPIEEE-Eta Kappa Nu (IEEE-HKN) is the student honor society of BVPIEEE and is dedicated to encouraging and recognizing excellence in the IEEE-designated fields of interest. These include: Engineering, Computer Science and Information Technology, Physical Sciences, Biological and Medical Sciences, Mathematics, Technical Communications, Education, Management, Law and Policy. The society, through a variety of service programs and leadership training, ensures that the student members develop lifelong skills that earmark them for prominent positions in industry and academia. It publishes two yearly magazines, Pratibinbh and Cogzniance. Also, it gives awards to the students who score well on academic front.\n" + "\n\n" + " To know more about the events and activities conducted by BVPIEEE-HKN Lambda Eta Chapter, refer to our past events page.");
-            file_maps.put("BVPIEEE-Eta", R.drawable.codex);
-            file_maps.put("BVPIEEE-Eta ", R.drawable.codex);
+            file_maps.put("BVPIEEE-Eta", R.drawable.hkn1p);
+            file_maps.put("BVPIEEE-Eta ", R.drawable.hkn2p);
             chaptext.setText("BVPIEEE-Eta Kappa Nu (IEEE-HKN)");
 
             fb.setOnClickListener(new View.OnClickListener() {
@@ -160,10 +181,16 @@ CardView dis=findViewById(R.id.discuss);
                     Intent facebookIntent = new Intent(Intent.ACTION_VIEW);
                     String facebookUrl = getFacebookPageURL(RasActivity.this);
                     facebookIntent.setData(Uri.parse(facebookUrl));
-                    startActivity(facebookIntent);
                 }
             });
-
+            dis.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    i.putExtra("forum", "hkn");
+                    startActivity(i);
+                }
+            });
         }
 
         else
@@ -171,8 +198,10 @@ CardView dis=findViewById(R.id.discuss);
             //  chaptertext.setText("The IEEE Student Branch of Bharati Vidyapeeth’s College of Engineering got the approval for starting the women in engineering student branch affinity group on 21st June 2007.\n" +
          //   "\n\n" +
                 //    "BVPIEEE Women in Engineering (WIE) is a professional organization dedicated to promoting women engineers and scientists, and inspiring girls around the world to follow their academic interests in a career in engineering."
-            file_maps.put("BVPIEEE Women in Engineering (WIE)", R.drawable.codex);
-            file_maps.put("BVPIEEE Women in Engineering (WIE) ", R.drawable.codex);
+            file_maps.put("BVPIEEE Women in Engineering (WIE)", R.drawable.wie2p);
+            file_maps.put("BVPIEEE Women in Engineering (WIE) ", R.drawable.wie3p);
+            file_maps.put("BVPIEEE Women in Engineering (WIE)  ", R.drawable.wie4p);
+
             chaptext.setText("Women in Engineering (WIE)");
 
 
@@ -187,15 +216,22 @@ CardView dis=findViewById(R.id.discuss);
                     startActivity(facebookIntent);
                 }
             });
-
+            dis.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    i.putExtra("forum", "wie");
+                    startActivity(i);
+                }
+            });
         }
         else
         if (Main2Activity.chapterno==6){
             //  chaptertext.setText("The IEEE Student Branch of Bharati Vidyapeeth’s College of Engineering got the approval for starting the women in engineering student branch affinity group on 21st June 2007.\n" +
             //   "\n\n" +
             //    "BVPIEEE Women in Engineering (WIE) is a professional organization dedicated to promoting women engineers and scientists, and inspiring girls around the world to follow their academic interests in a career in engineering."
-            file_maps.put("CODE-X", R.drawable.codex);
-            file_maps.put("CODE-X ", R.drawable.codex);
+            file_maps.put("CODE-X", R.drawable.codex1p);
+            file_maps.put("CODE-X ", R.drawable.codex2p);
             chaptext.setText("CODE-X");
 
 
@@ -210,7 +246,14 @@ CardView dis=findViewById(R.id.discuss);
                     startActivity(facebookIntent);
                 }
             });
-
+            dis.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    i.putExtra("forum", "codex");
+                    startActivity(i);
+                }
+            });
         }
 
         else
@@ -218,8 +261,8 @@ CardView dis=findViewById(R.id.discuss);
             //  chaptertext.setText("The IEEE Student Branch of Bharati Vidyapeeth’s College of Engineering got the approval for starting the women in engineering student branch affinity group on 21st June 2007.\n" +
             //   "\n\n" +
             //    "BVPIEEE Women in Engineering (WIE) is a professional organization dedicated to promoting women engineers and scientists, and inspiring girls around the world to follow their academic interests in a career in engineering."
-            file_maps.put("DRISHTI", R.drawable.codex);
-            file_maps.put("DRISHTI ", R.drawable.codex);
+            file_maps.put("DRISHTI", R.drawable.dhristi1p);
+            file_maps.put("DRISHTI ", R.drawable.dhristi2p);
             chaptext.setText("DRISHTI");
 
 
@@ -234,7 +277,14 @@ CardView dis=findViewById(R.id.discuss);
                     startActivity(facebookIntent);
                 }
             });
-
+            dis.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    i.putExtra("forum", "drishti");
+                    startActivity(i);
+                }
+            });
         }
 
         else
@@ -242,8 +292,9 @@ CardView dis=findViewById(R.id.discuss);
             //  chaptertext.setText("The IEEE Student Branch of Bharati Vidyapeeth’s College of Engineering got the approval for starting the women in engineering student branch affinity group on 21st June 2007.\n" +
             //   "\n\n" +
             //    "BVPIEEE Women in Engineering (WIE) is a professional organization dedicated to promoting women engineers and scientists, and inspiring girls around the world to follow their academic interests in a career in engineering."
-            file_maps.put("Robotics and Automation (RAU)", R.drawable.codex);
-            file_maps.put("Robotics and Automation (RAU) ", R.drawable.codex);
+            file_maps.put("Robotics and Automation (RAU)", R.drawable.rau1p);
+            file_maps.put("Robotics and Automation (RAU) ", R.drawable.rau2p);
+
             chaptext.setText("Robotics and Automation (RAU)");
 
 
@@ -258,6 +309,14 @@ CardView dis=findViewById(R.id.discuss);
                     startActivity(facebookIntent);
                 }
             });
+            dis.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    i.putExtra("forum", "rau");
+                    startActivity(i);
+                }
+            });
 
         }
 
@@ -266,8 +325,8 @@ CardView dis=findViewById(R.id.discuss);
             //  chaptertext.setText("The IEEE Student Branch of Bharati Vidyapeeth’s College of Engineering got the approval for starting the women in engineering student branch affinity group on 21st June 2007.\n" +
             //   "\n\n" +
             //    "BVPIEEE Women in Engineering (WIE) is a professional organization dedicated to promoting women engineers and scientists, and inspiring girls around the world to follow their academic interests in a career in engineering."
-            file_maps.put("Entrepreneurship Cell", R.drawable.codex);
-            file_maps.put("Entrepreneurship Cell ", R.drawable.codex);
+            file_maps.put("Entrepreneurship Cell", R.drawable.ecell1p);
+            file_maps.put("Entrepreneurship Cell ", R.drawable.ecell2p);
             chaptext.setText("Entrepreneurship Cell (E-CELL)");
 
 
@@ -282,7 +341,14 @@ CardView dis=findViewById(R.id.discuss);
                     startActivity(facebookIntent);
                 }
             });
-
+            dis.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    i.putExtra("forum", "ecell");
+                    startActivity(i);
+                }
+            });
         }
 
         else
@@ -290,8 +356,8 @@ CardView dis=findViewById(R.id.discuss);
             //  chaptertext.setText("The IEEE Student Branch of Bharati Vidyapeeth’s College of Engineering got the approval for starting the women in engineering student branch affinity group on 21st June 2007.\n" +
             //   "\n\n" +
             //    "BVPIEEE Women in Engineering (WIE) is a professional organization dedicated to promoting women engineers and scientists, and inspiring girls around the world to follow their academic interests in a career in engineering."
-            file_maps.put("Gamma", R.drawable.codex);
-            file_maps.put("Gamma ", R.drawable.codex);
+            file_maps.put("Gamma", R.drawable.gamma1p);
+            file_maps.put("Gamma ", R.drawable.gamma2p);
             chaptext.setText("Gaming and MultiMedia Animation (GAMMA)");
 
 
@@ -306,6 +372,14 @@ CardView dis=findViewById(R.id.discuss);
                     startActivity(facebookIntent);
                 }
             });
+            dis.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    i.putExtra("forum", "gamma");
+                    startActivity(i);
+                }
+            });
 
         }
 
@@ -314,8 +388,8 @@ CardView dis=findViewById(R.id.discuss);
             //  chaptertext.setText("The IEEE Student Branch of Bharati Vidyapeeth’s College of Engineering got the approval for starting the women in engineering student branch affinity group on 21st June 2007.\n" +
             //   "\n\n" +
             //    "BVPIEEE Women in Engineering (WIE) is a professional organization dedicated to promoting women engineers and scientists, and inspiring girls around the world to follow their academic interests in a career in engineering."
-            file_maps.put("BVCOE QUIZ CLUB (BQC)", R.drawable.codex);
-            file_maps.put("BVCOE QUIZ CLUB (BQC) ", R.drawable.codex);
+            file_maps.put("BVCOE QUIZ CLUB (BQC)", R.drawable.bqc1p);
+            file_maps.put("BVCOE QUIZ CLUB (BQC) ", R.drawable.bcq2p);
             chaptext.setText("BVCOE QUIZ CLUB (BQC)");
 
 
@@ -328,6 +402,14 @@ CardView dis=findViewById(R.id.discuss);
                     String facebookUrl = getFacebookPageURL(RasActivity.this);
                     facebookIntent.setData(Uri.parse(facebookUrl));
                     startActivity(facebookIntent);
+                }
+            });
+            dis.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    i.putExtra("forum", "bqc");
+                    startActivity(i);
                 }
             });
 
