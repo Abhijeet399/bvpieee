@@ -37,7 +37,7 @@ public class RasActivity extends AppCompatActivity implements BaseSliderView.OnS
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         TextView chaptext=findViewById(R.id.chapname);
-CardView event=findViewById(R.id.event);
+TextView event=findViewById(R.id.event);
 CardView res=findViewById(R.id.reso);
 CardView dis=findViewById(R.id.discuss);
         CardView abt=findViewById(R.id.abt);

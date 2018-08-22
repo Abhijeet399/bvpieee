@@ -13,15 +13,16 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="@color/menu_text">
 
         <RelativeLayout
             android:id="@+id/rla"
             android:layout_width="match_parent"
-            android:layout_height="800dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:background="@color/grey_300">
+            android:background="@color/menu_text">
 
             <TextView
                 android:id="@+id/textView32"
@@ -34,6 +35,7 @@
                 android:layout_marginTop="66dp"
                 android:text="Latest News, Events and Workshops"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/book_loading_background"
                 android:textSize="16sp" />
 
             <com.daimajia.slider.library.SliderLayout
@@ -75,410 +77,193 @@
 
                 />
 
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/rl1"
-                android:layout_alignStart="@+id/textView32"
-                android:layout_marginBottom="-433dp"
-                android:text="BVPIEEE CHAPTERS"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="16sp" />
-
-
-            <HorizontalScrollView
-                android:id="@+id/rl1"
-                android:layout_width="wrap_content"
-                android:layout_height="95dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="433dp">
-
-                <LinearLayout
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:layout_marginTop="7dp"
-                    android:background="@color/white"
-                    android:orientation="horizontal"
-                    android:padding="12dp">
-
-                    <LinearLayout
-                        android:id="@+id/ras"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="8dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/hoo1"
-                            android:layout_width="80dp"
-                            android:layout_height="46dp"
-                            android:layout_centerHorizontal="true"
-
-                            android:foregroundGravity="center_horizontal"
-                            app:srcCompat="@drawable/ras" />
-
-                        <TextView
-                            android:id="@+id/textView25"
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:text="RAS"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/cs"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="8dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/imageView77"
-                            android:layout_width="80dp"
-                            android:layout_height="46dp"
-                            android:layout_centerHorizontal="true"
-                            android:foregroundGravity="center_horizontal"
-                            custom:srcCompat="@drawable/ieee_cs_logo" />
-
-                        <TextView
-                            android:id="@+id/textView31"
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/poss"
-                            android:layout_centerHorizontal="true"
-                            android:foregroundGravity="center_horizontal"
-                            android:gravity="center_horizontal"
-                            android:text="CS"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/wie"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="8dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/bo"
-                            android:layout_width="80dp"
-                            android:layout_height="46dp"
-
-                            android:layout_centerHorizontal="true"
-                            android:foregroundGravity="center_horizontal"
-                            app:srcCompat="@drawable/wie" />
-
-                        <TextView
-                            android:id="@+id/textView30"
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-
-                            android:foregroundGravity="center_horizontal"
-                            android:gravity="center_horizontal"
-                            android:text="WIE"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/ias"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="8dp"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/po"
-                            android:layout_width="80dp"
-                            android:layout_height="46dp"
-                            android:layout_centerHorizontal="true"
-
-                            android:foregroundGravity="center_horizontal"
-                            app:srcCompat="@drawable/iaslogo" />
-
-                        <TextView
-                            android:id="@+id/textView3"
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-
-                            android:gravity="center_horizontal"
-                            android:text="IAS"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/hkn"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="8dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/h"
-                            android:layout_width="80dp"
-                            android:layout_height="46dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginEnd="11dp"
-                            android:foregroundGravity="center_horizontal"
-                            app:srcCompat="@drawable/hkn" />
-
-
-                        <TextView
-                            android:id="@+id/textView3o"
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:foregroundGravity="center_horizontal"
-                            android:gravity="center_horizontal"
-                            android:text="HKN"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-            </HorizontalScrollView>
-
-
-            <HorizontalScrollView
-                android:id="@+id/rl11"
-                android:layout_width="wrap_content"
-                android:layout_height="95dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginBottom="131dp">
-
-                <LinearLayout
-
-                    android:id="@+id/sc"
-                    android:layout_width="wrap_content"
-
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:background="@color/white"
-                    android:orientation="horizontal"
-                    android:padding="12dp">
-
-                    <LinearLayout
-                        android:id="@+id/codex"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="8dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/hoo"
-                            android:layout_width="80dp"
-                            android:layout_height="46dp"
-                            android:layout_centerHorizontal="true"
-
-                            android:foregroundGravity="center_horizontal"
-                            app:srcCompat="@drawable/codex" />
-
-                        <TextView
-                            android:id="@+id/textView25o"
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:text="Code-X"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/drishti"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="8dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/imageView7"
-                            android:layout_width="80dp"
-                            android:layout_height="46dp"
-                            android:layout_centerHorizontal="true"
-                            android:foregroundGravity="center_horizontal"
-                            custom:srcCompat="@drawable/drish" />
-
-                        <TextView
-                            android:id="@+id/textView31ood"
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/poss"
-                            android:layout_centerHorizontal="true"
-                            android:foregroundGravity="center_horizontal"
-                            android:gravity="center_horizontal"
-                            android:text="Drishti"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/rau"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="8dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/bob"
-                            android:layout_width="80dp"
-                            android:layout_height="46dp"
-
-                            android:layout_centerHorizontal="true"
-                            android:foregroundGravity="center_horizontal"
-                            app:srcCompat="@drawable/rau" />
-
-                        <TextView
-                            android:id="@+id/textView30o"
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-
-                            android:foregroundGravity="center_horizontal"
-                            android:gravity="center_horizontal"
-                            android:text="RAU"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/ecell"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="8dp"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/poss"
-                            android:layout_width="80dp"
-                            android:layout_height="46dp"
-                            android:layout_centerHorizontal="true"
-
-                            android:foregroundGravity="center_horizontal"
-                            app:srcCompat="@drawable/ecell" />
-
-                        <TextView
-                            android:id="@+id/textView31oo"
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-
-                            android:gravity="center_horizontal"
-                            android:text="E-Cell"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/gamma"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="8dp"
-                        android:orientation="vertical">
-
-
-                        <ImageView
-                            android:id="@+id/pos"
-                            android:layout_width="80dp"
-                            android:layout_height="46dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginEnd="11dp"
-                            android:foregroundGravity="center_horizontal"
-                            app:srcCompat="@drawable/gamma" />
-
-                        <TextView
-                            android:id="@+id/textView31o"
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:foregroundGravity="center_horizontal"
-                            android:gravity="center_horizontal"
-                            android:text="Gamma"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/bqc"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="8dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ps"
-                            android:layout_width="80dp"
-                            android:layout_height="46dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginEnd="11dp"
-                            android:foregroundGravity="center_horizontal"
-                            app:srcCompat="@drawable/bqc" />
-
-
-                        <TextView
-                            android:id="@+id/textView1o"
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:foregroundGravity="center_horizontal"
-                            android:gravity="center_horizontal"
-                            android:text="BQC"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                </LinearLayout>
-            </HorizontalScrollView>
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/rl11"
-                android:layout_alignStart="@+id/textView32"
-                android:text="BVPIEEE STUDENT INTEREST GROUPS"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignStart="@+id/textView32"
-                android:layout_marginTop="290dp"
-                android:text="ANNOUNCEMENT"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="16sp" />
-
-            <RelativeLayout
-                android:id="@+id/rrr"
-                android:layout_width="356dp"
-                android:layout_height="74dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="321dp"
-                android:background="@android:color/white">
-
-                <com.wajahatkarim3.easyflipview.EasyFlipView
-                    android:id="@+id/easyflip"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:flipDuration="400"
-                    app:flipEnabled="true"
-                    app:flipFrom="front"
-                    app:flipOnTouch="true"
-                    app:flipType="vertical">
-
-                    <!-- Back Layout Goes Here -->
-                    <include layout="@layout/flash_card_layout_front" />
-
-                    <!-- Front Layout Goes Here -->
-                    <include layout="@layout/flash_card_layout_back" />
-
-                </com.wajahatkarim3.easyflipview.EasyFlipView>
-
-            </RelativeLayout>
-
 
         </RelativeLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rla"
+            android:orientation="vertical">
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/black_overlay"
+                android:onClick="clicked"
+                android:text="Chapters"
+                android:textColor="#FFF"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:id="@+id/chapters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/chapters1"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:background="@drawable/raspp"
+                    android:gravity="center_vertical"
+                    android:text="    ROBOTICS AND AUTOMATION SOCIETY"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="17dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/chapters2"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:background="@drawable/cspp"
+                    android:gravity="center_vertical"
+                    android:text="    COMPUTER SOCIETY"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="18dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/chapters3"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:background="@drawable/iaspp"
+                    android:gravity="center_vertical"
+                    android:text="    INDUSTRY AND AUTOMATION SOCIETY"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="18dp"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/chapters4"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:background="@drawable/hknpp"
+                    android:gravity="center_vertical"
+                    android:text="    HKN LAMBDA ETA CHAPTER"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="18dp"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/chapters5"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:background="@drawable/wiepp"
+                    android:gravity="center_vertical"
+                    android:text="    WOMEN IN ENGINEERING"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="18dp"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/black_overlay"
+                android:onClick="clicked2"
+                android:text="SIGs"
+
+                android:textColor="#FFF"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:id="@+id/sigs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/sigs1"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:background="@drawable/codexpp"
+                    android:gravity="center_vertical"
+                    android:text="    CODE-X"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="18dp"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/sigs2"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:background="@drawable/drishtipp"
+                    android:gravity="center_vertical"
+                    android:text="    DRISHTI"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="18dp"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/sigs3"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:background="@drawable/raupp"
+                    android:gravity="center_vertical"
+                    android:text="    ROBOTICS AND AUTOMATION SOCIETY"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/sigs4"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:background="@drawable/bqcpp"
+                    android:gravity="center_vertical"
+                    android:text="    BVCOE QUIZ CLUB"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/sigs5"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:background="@drawable/ecel1pp"
+                    android:gravity="center_vertical"
+                    android:text="    ENTERPRENEURSHIP CELL"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="18dp"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/sigs6"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:background="@drawable/gammapp"
+                    android:gravity="center_vertical"
+                    android:text="    GAMMA"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="18dp"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+        </LinearLayout>
     </RelativeLayout>
 
 </ScrollView>

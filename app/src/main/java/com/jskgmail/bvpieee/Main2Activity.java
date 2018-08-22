@@ -2,7 +2,6 @@ package com.jskgmail.bvpieee;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -21,7 +20,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -35,7 +33,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.StorageReference;
-import com.wajahatkarim3.easyflipview.EasyFlipView;
 
 import java.util.HashMap;
 
@@ -47,6 +44,26 @@ public class Main2Activity extends AppCompatActivity
     static int chapterno;
     static   int verified_ieee=0;
     private StorageReference mStorageRef;
+
+    TextView chapters1;
+    TextView chapters2,
+     chapters3,
+     chapters4,
+     chapters5;
+    Boolean upd=false;
+    TextView sigs1,
+     sigs2,
+     sigs3,
+     sigs4,
+     sigs5,
+     sigs6,
+     sigs7;
+    Boolean upd2=false;
+
+
+
+
+
     RelativeLayout info_announce;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -57,12 +74,26 @@ public class Main2Activity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-        info_announce=findViewById(R.id.rrr);
+      //  info_announce=findViewById(R.id.rrr);
 
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
+
+
+        chapters1 = (TextView) findViewById(R.id.chapters1);
+        chapters2 = (TextView) findViewById(R.id.chapters2);
+        chapters3 =  findViewById(R.id.chapters3);
+        chapters4 = findViewById(R.id.chapters4);
+        chapters5 = findViewById(R.id.chapters5);
+        sigs1 =  findViewById(R.id.sigs1);
+        sigs2 =  findViewById(R.id.sigs2);
+        sigs3 =  findViewById(R.id.sigs3);
+        sigs4 =  findViewById(R.id.sigs4);
+        sigs5 =  findViewById(R.id.sigs5);
+        sigs6 =  findViewById(R.id.sigs6);
+        // sigs7 =(ImageView ) findViewById(R.id.sigs7);
 
 
 
@@ -92,13 +123,13 @@ public class Main2Activity extends AppCompatActivity
         TextView topicc=findViewById(R.id.topic);
         TextView desc_txt=findViewById(R.id.desc);
 
-        desc_txt.setText(desc);
-        datee.setText(date);
+//        desc_txt.setText(desc);
+//        datee.setText(date);
       //  timee.setText(time);
-        topicc.setText(topic);
-        timee.setText(time);
+     //   topicc.setText(topic);
+    //    timee.setText(time);
 
-        EasyFlipView easyFlipView = (EasyFlipView) findViewById(R.id.easyflip);
+     /*   EasyFlipView easyFlipView = (EasyFlipView) findViewById(R.id.easyflip);
      //   EasyFlipView.FlipState flipSide = easyFlipView.getCurrentFlipState();
 
         easyFlipView.flipTheView();
@@ -114,7 +145,7 @@ public class Main2Activity extends AppCompatActivity
             }
         });
 
-
+*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -124,8 +155,6 @@ public class Main2Activity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
 
 
 
@@ -168,8 +197,8 @@ public class Main2Activity extends AppCompatActivity
         // mDemoSlider.addOnPageChangeListener(this);
 
 
-        LinearLayout ras=findViewById(R.id.ras);
-        ras.setOnClickListener(new View.OnClickListener() {
+//        LinearLayout ras=findViewById(R.id.ras);
+        chapters1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chapterno=1;
@@ -180,8 +209,8 @@ public class Main2Activity extends AppCompatActivity
         });
 
 
-        LinearLayout cs=findViewById(R.id.cs);
-        cs.setOnClickListener(new View.OnClickListener() {
+     //   LinearLayout cs=findViewById(R.id.cs);
+        chapters2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chapterno=2;
@@ -191,19 +220,8 @@ public class Main2Activity extends AppCompatActivity
         });
 
 
-        LinearLayout wie=findViewById(R.id.wie);
-        wie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                chapterno=3;
-                Intent intent=new Intent(Main2Activity.this,RasActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-        LinearLayout ias=findViewById(R.id.ias);
-        ias.setOnClickListener(new View.OnClickListener() {
+     //   LinearLayout wie=findViewById(R.id.wie);
+        chapters3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chapterno=4;
@@ -213,8 +231,8 @@ public class Main2Activity extends AppCompatActivity
         });
 
 
-        LinearLayout hkn=findViewById(R.id.hkn);
-        hkn.setOnClickListener(new View.OnClickListener() {
+    //    LinearLayout ias=findViewById(R.id.ias);
+        chapters4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chapterno=5;
@@ -223,8 +241,19 @@ public class Main2Activity extends AppCompatActivity
             }
         });
 
-        LinearLayout codex=findViewById(R.id.codex);
-        codex.setOnClickListener(new View.OnClickListener() {
+
+     //   LinearLayout hkn=findViewById(R.id.hkn);
+        chapters5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                chapterno=3;
+                Intent intent=new Intent(Main2Activity.this,RasActivity.class);
+                startActivity(intent);
+            }
+        });
+
+  //      LinearLayout codex=findViewById(R.id.codex);
+        sigs1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chapterno=6;
@@ -233,8 +262,8 @@ public class Main2Activity extends AppCompatActivity
             }
         });
 
-        LinearLayout drishti=findViewById(R.id.drishti);
-        drishti.setOnClickListener(new View.OnClickListener() {
+     //   LinearLayout drishti=findViewById(R.id.drishti);
+        sigs2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chapterno=7;
@@ -243,8 +272,8 @@ public class Main2Activity extends AppCompatActivity
             }
         });
 
-        LinearLayout rau=findViewById(R.id.rau);
-        rau.setOnClickListener(new View.OnClickListener() {
+      //  LinearLayout rau=findViewById(R.id.rau);
+        sigs3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chapterno=8;
@@ -253,8 +282,18 @@ public class Main2Activity extends AppCompatActivity
             }
         });
 
-        LinearLayout ecell=findViewById(R.id.ecell);
-        ecell.setOnClickListener(new View.OnClickListener() {
+     //   LinearLayout ecell=findViewById(R.id.ecell);
+        sigs4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                chapterno=11;
+                Intent intent=new Intent(Main2Activity.this,RasActivity.class);
+                startActivity(intent);
+            }
+        });
+
+     //   LinearLayout gamma=findViewById(R.id.gamma);
+        sigs5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chapterno=9;
@@ -263,8 +302,9 @@ public class Main2Activity extends AppCompatActivity
             }
         });
 
-        LinearLayout gamma=findViewById(R.id.gamma);
-        gamma.setOnClickListener(new View.OnClickListener() {
+
+      //  LinearLayout bqc=findViewById(R.id.bqc);
+        sigs6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chapterno=10;
@@ -274,15 +314,15 @@ public class Main2Activity extends AppCompatActivity
         });
 
 
-        LinearLayout bqc=findViewById(R.id.bqc);
-        bqc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                chapterno=11;
-                Intent intent=new Intent(Main2Activity.this,RasActivity.class);
-                startActivity(intent);
-            }
-        });
+
+
+
+
+
+
+
+
+
 
 
 
@@ -290,6 +330,62 @@ public class Main2Activity extends AppCompatActivity
 
 
     }
+    public void clicked(View view){
+        if(upd==false){
+            //Toast.makeText(this,"In false",Toast.LENGTH_LONG).show();
+            chapters1.setVisibility(View.VISIBLE);
+            chapters2.setVisibility(View.VISIBLE);
+            chapters3.setVisibility(View.VISIBLE);
+            chapters4.setVisibility(View.VISIBLE);
+            chapters5.setVisibility(View.VISIBLE);
+            upd=true;
+        }
+        else{
+            // Toast.makeText(this,"In true",Toast.LENGTH_LONG).show();
+            chapters1.setVisibility(View.GONE);
+            chapters2.setVisibility(View.GONE);
+            chapters3.setVisibility(View.GONE);
+            chapters4.setVisibility(View.GONE);
+            chapters5.setVisibility(View.GONE);
+            upd =false;
+        }
+    }
+    public void clicked2(View view){
+        if(upd2==false){
+            // Toast.makeText(this,"In false",Toast.LENGTH_LONG).show();
+            sigs1.setVisibility(View.VISIBLE);
+            sigs2.setVisibility(View.VISIBLE);
+            sigs3.setVisibility(View.VISIBLE);
+            sigs4.setVisibility(View.VISIBLE);
+            sigs5.setVisibility(View.VISIBLE);
+            sigs6.setVisibility(View.VISIBLE);
+        //    sigs7.setVisibility(View.VISIBLE);
+            upd2=true;
+        }
+        else{
+            //   Toast.makeText(this,"In true",Toast.LENGTH_LONG).show();
+            sigs1.setVisibility(View.GONE);
+            sigs2.setVisibility(View.GONE);
+            sigs3.setVisibility(View.GONE);
+            sigs4.setVisibility(View.GONE);
+            sigs5.setVisibility(View.GONE);
+            sigs6.setVisibility(View.GONE);
+         //   sigs7.setVisibility(View.GONE);
+            upd2 =false;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public void onBackPressed() {
@@ -334,16 +430,6 @@ public class Main2Activity extends AppCompatActivity
             alert.setView(alertLayout);
 
 
-
-            alert.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
-
-
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-
-
-                }
-            });
 
             AlertDialog dialog = alert.create();
             dialog.show();
@@ -432,7 +518,7 @@ public class Main2Activity extends AppCompatActivity
             startActivity(new Intent(Main2Activity.this,AllEventsActivity.class));
 
         }
-        else if (id == R.id.spon) {
+    /*    else if (id == R.id.spon) {
 
             LayoutInflater inflater = getLayoutInflater();
             View alertLayout = inflater.inflate(R.layout.spon, null);
@@ -461,7 +547,7 @@ public class Main2Activity extends AppCompatActivity
 
 
 
-        } else if (id == R.id.nav_share) {
+        } */else if (id == R.id.nav_share) {
 
             LayoutInflater inflater = getLayoutInflater();
             View alertLayout = inflater.inflate(R.layout.about, null);
@@ -492,7 +578,7 @@ public class Main2Activity extends AppCompatActivity
                 }
             });
             // disallow cancel of AlertDialog on click of back button and outside touch
-            alert.setTitle("About ");
+    //        alert.setTitle("About ");
             alert.setIcon(R.drawable.ic_help_outline_black_24dp);
 
 
@@ -681,11 +767,11 @@ void nextevent()
                 TextView topicc=findViewById(R.id.topic);
                 TextView desc_txt=findViewById(R.id.desc);
 
-                desc_txt.setText(nxt_desc[0]);
-                datee.setText(nxt_date[0]);
+            //    desc_txt.setText(nxt_desc[0]);
+          //      datee.setText(nxt_date[0]);
                 //  timee.setText(time);
-                topicc.setText(nxt_topic[0]);
-                timee.setText(nxt_time[0]);
+             //   topicc.setText(nxt_topic[0]);
+           //     timee.setText(nxt_time[0]);
 
 
             }
