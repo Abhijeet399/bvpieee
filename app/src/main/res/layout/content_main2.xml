@@ -78,12 +78,55 @@
                 />
 
 
+
         </RelativeLayout>
 
+
+        <com.daimajia.slider.library.SliderLayout
+            android:id="@+id/slider1"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+
+
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/rla"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            custom:auto_cycle="true"
+            custom:indicator_visibility="visible"
+            custom:pager_animation="Accordion"
+            custom:pager_animation_span="1100">
+
+        </com.daimajia.slider.library.SliderLayout>
+
+        <com.daimajia.slider.library.Indicators.PagerIndicator
+            android:id="@+id/custom_indicator1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            custom:selected_color="#0095BF"
+            custom:selected_drawable="@drawable/ic_menu_send"
+            custom:selected_height="6dp"
+            custom:selected_padding_left="5dp"
+            custom:selected_padding_right="5dp"
+            custom:selected_width="6dp"
+            custom:shape="oval"
+            custom:unselected_color="#55333333"
+            custom:unselected_height="6dp"
+            custom:unselected_padding_left="5dp"
+            custom:unselected_padding_right="5dp"
+            custom:unselected_width="6dp"
+
+            />
         <LinearLayout
             android:layout_width="match_parent"
+            android:id="@+id/lll"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/rla"
+            android:layout_below="@+id/slider1"
             android:orientation="vertical">
 
             <Button
@@ -264,6 +307,9 @@
 
             </LinearLayout>
         </LinearLayout>
+
+
+
     </RelativeLayout>
 
 </ScrollView>

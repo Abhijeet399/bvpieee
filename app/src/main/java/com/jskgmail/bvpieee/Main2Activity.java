@@ -194,6 +194,57 @@ public class Main2Activity extends AppCompatActivity
         mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
         mDemoSlider.setCustomAnimation(new DescriptionAnimation());
         mDemoSlider.setDuration(4000);
+
+
+
+
+
+
+
+     //   mDemoSlider1 = (SliderLayout) findViewById(R.id.slider1);
+
+
+        HashMap<String, Integer> file_maps1 = new HashMap<>();
+
+        file_maps1.put("BVPIEE-CS workshop", R.drawable.h1);
+        file_maps1.put("BVPIEE-RAS", R.drawable.h2);
+        file_maps1.put("BVPIEE-RAS ", R.drawable.h3);
+        file_maps1.put("FOC", R.drawable.foc171);
+
+
+        for (String name : file_maps.keySet()) {
+            TextSliderView textSliderView = new TextSliderView(this);
+            // initialize a SliderLayout
+            textSliderView
+                    .description(name)
+                    .image((file_maps.get(name)))
+                    .setScaleType(BaseSliderView.ScaleType.Fit)
+                    .setOnSliderClickListener(this);
+
+            //add your extra information
+            textSliderView.bundle(new Bundle());
+            textSliderView.getBundle()
+                    .putString("extra", name);
+
+            mDemoSlider.addSlider(textSliderView);
+        }
+        mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
+        mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
+        mDemoSlider.setCustomAnimation(new DescriptionAnimation());
+        mDemoSlider.setDuration(4000);
+
+
+
+
+
+
+
+
+
+
+
+
+
         // mDemoSlider.addOnPageChangeListener(this);
 
 
@@ -320,15 +371,6 @@ public class Main2Activity extends AppCompatActivity
 
 
 
-
-
-
-
-
-
-
-
-
     }
     public void clicked(View view){
         if(upd==false){
@@ -339,6 +381,14 @@ public class Main2Activity extends AppCompatActivity
             chapters4.setVisibility(View.VISIBLE);
             chapters5.setVisibility(View.VISIBLE);
             upd=true;
+            upd2=false;
+            sigs1.setVisibility(View.GONE);
+            sigs2.setVisibility(View.GONE);
+            sigs3.setVisibility(View.GONE);
+            sigs4.setVisibility(View.GONE);
+            sigs5.setVisibility(View.GONE);
+            sigs6.setVisibility(View.GONE);
+
         }
         else{
             // Toast.makeText(this,"In true",Toast.LENGTH_LONG).show();
@@ -348,6 +398,7 @@ public class Main2Activity extends AppCompatActivity
             chapters4.setVisibility(View.GONE);
             chapters5.setVisibility(View.GONE);
             upd =false;
+
         }
     }
     public void clicked2(View view){
@@ -361,6 +412,18 @@ public class Main2Activity extends AppCompatActivity
             sigs6.setVisibility(View.VISIBLE);
         //    sigs7.setVisibility(View.VISIBLE);
             upd2=true;
+            upd=false;
+            chapters1.setVisibility(View.GONE);
+            chapters2.setVisibility(View.GONE);
+            chapters3.setVisibility(View.GONE);
+            chapters4.setVisibility(View.GONE);
+            chapters5.setVisibility(View.GONE);
+
+
+
+
+
+
         }
         else{
             //   Toast.makeText(this,"In true",Toast.LENGTH_LONG).show();

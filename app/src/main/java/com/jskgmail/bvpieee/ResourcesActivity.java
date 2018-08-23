@@ -23,7 +23,7 @@ String TAG="Resourcesaa";
         ActionBar actionBar=getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_black_24dp);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_home_black_24dp);
         actionBar.setDisplayShowHomeEnabled(true);
 
 
