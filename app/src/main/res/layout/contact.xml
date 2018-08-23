@@ -8,7 +8,6 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -17,7 +16,7 @@
 
         android:text="Contact us and feel free to ask anything !!"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/white"
         android:textSize="16sp" />
 
     <ru.dimorinny.floatingtextbutton.FloatingTextButton

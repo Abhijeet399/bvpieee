@@ -32,6 +32,7 @@ String TAG="ALLEVENTS";
         final ArrayList<String> arrayList3=new ArrayList<>();
         final ArrayList<String> arrayList4=new ArrayList<>();
         final ArrayList<String> arrayList5=new ArrayList<>();
+        final ArrayList<String> arrayList6=new ArrayList<>();
 
 
 
@@ -74,14 +75,15 @@ else   if (dataSnapshot1.getKey().equals("topic"))
                             arrayList1.add(dataSnapshot1.getValue(String.class));
 else   if (dataSnapshot1.getKey().equals("venue"))
                             arrayList5.add(dataSnapshot1.getValue(String.class));
-
-
+                        else   if (dataSnapshot1.getKey().equals("pic"))
+                            arrayList6.add(dataSnapshot1.getValue(String.class));
 
 
                     }
                 }
 
-                ListViewAdapter1 adapter=new ListViewAdapter1(AllEventsActivity.this,arrayList1,arrayList2,arrayList3,arrayList4,arrayList5);
+                ListViewAdapter1 adapter=new ListViewAdapter1(AllEventsActivity.this,arrayList1,arrayList2,
+                        arrayList3,arrayList4,arrayList5,arrayList6);
                 listView.setAdapter(adapter);
 
 

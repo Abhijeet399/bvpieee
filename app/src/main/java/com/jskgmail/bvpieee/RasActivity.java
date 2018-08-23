@@ -7,8 +7,10 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
@@ -47,6 +49,13 @@ CardView dis=findViewById(R.id.discuss);
     //    FloatingTextButton events=findViewById(R.id.history);
      //   FloatingTextButton fb=findViewById(R.id.fab1);
 
+
+
+
+
+
+
+
         event.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +66,26 @@ CardView dis=findViewById(R.id.discuss);
         res.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (Main2Activity.verified_ieee==0)
+                {
+                    LayoutInflater inflater = getLayoutInflater();
+                    View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                    AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                    // this is set the view from XML inside AlertDialog
+                    alert.setView(alertLayout);
+
+
+
+
+                    AlertDialog dialog = alert.create();
+                    dialog.show();
+
+                }
+                else
+
+
                 startActivity(new Intent(RasActivity.this,ResourcesActivity.class));
             }
         });
@@ -101,9 +130,31 @@ CardView dis=findViewById(R.id.discuss);
             dis.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+                    {
+
+
+                        Intent i=new Intent(RasActivity.this,MainChatActivity.class);
                     i.putExtra("forum", "ras");
-                    startActivity(i);
+                    startActivity(i);}
                 }
             });
         }
@@ -130,9 +181,29 @@ CardView dis=findViewById(R.id.discuss);
             dis.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+                    {
+                        Intent i=new Intent(RasActivity.this,MainChatActivity.class);
                     i.putExtra("forum", "cs");
                     startActivity(i);
+                }
                 }
             });
 
@@ -160,10 +231,29 @@ CardView dis=findViewById(R.id.discuss);
             dis.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+                    {
+                        Intent i=new Intent(RasActivity.this,MainChatActivity.class);
                     i.putExtra("forum", "ias");
                     startActivity(i);
-                }
+                }}
             });
         }
         else
@@ -186,9 +276,29 @@ CardView dis=findViewById(R.id.discuss);
             dis.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+                    {
+                        Intent i=new Intent(RasActivity.this,MainChatActivity.class);
                     i.putExtra("forum", "hkn");
                     startActivity(i);
+                }
                 }
             });
         }
@@ -219,10 +329,29 @@ CardView dis=findViewById(R.id.discuss);
             dis.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+                    {
+                        Intent i=new Intent(RasActivity.this,MainChatActivity.class);
                     i.putExtra("forum", "wie");
                     startActivity(i);
-                }
+                }}
             });
         }
         else
@@ -238,8 +367,8 @@ CardView dis=findViewById(R.id.discuss);
             fb.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    FACEBOOK_URL = "https://www.facebook.com/WieMeet2k15/";
-                    FACEBOOK_PAGE_ID = "WieMeet2k15";
+                    FACEBOOK_URL = "https://www.facebook.com/bvpieeecodex/";
+                    FACEBOOK_PAGE_ID = "bvpieeecodex";
                     Intent facebookIntent = new Intent(Intent.ACTION_VIEW);
                     String facebookUrl = getFacebookPageURL(RasActivity.this);
                     facebookIntent.setData(Uri.parse(facebookUrl));
@@ -249,9 +378,28 @@ CardView dis=findViewById(R.id.discuss);
             dis.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+                    {
+                        Intent i=new Intent(RasActivity.this,MainChatActivity.class);
                     i.putExtra("forum", "codex");
-                    startActivity(i);
+                    startActivity(i);}
                 }
             });
         }
@@ -280,10 +428,29 @@ CardView dis=findViewById(R.id.discuss);
             dis.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+                    {
+                        Intent i=new Intent(RasActivity.this,MainChatActivity.class);
                     i.putExtra("forum", "drishti");
                     startActivity(i);
-                }
+                }}
             });
         }
 
@@ -312,10 +479,29 @@ CardView dis=findViewById(R.id.discuss);
             dis.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+                    {
+                        Intent i=new Intent(RasActivity.this,MainChatActivity.class);
                     i.putExtra("forum", "rau");
                     startActivity(i);
-                }
+                }}
             });
 
         }
@@ -333,8 +519,8 @@ CardView dis=findViewById(R.id.discuss);
             fb.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    FACEBOOK_URL = "https://www.facebook.com/WieMeet2k15/";
-                    FACEBOOK_PAGE_ID = "WieMeet2k15";
+                    FACEBOOK_URL = "https://www.facebook.com/pages/category/Community/E-Cell-BVPIEEE-648188411872430/";
+                    FACEBOOK_PAGE_ID = "E-Cell_BVPIEEE-648188411872430";
                     Intent facebookIntent = new Intent(Intent.ACTION_VIEW);
                     String facebookUrl = getFacebookPageURL(RasActivity.this);
                     facebookIntent.setData(Uri.parse(facebookUrl));
@@ -344,10 +530,29 @@ CardView dis=findViewById(R.id.discuss);
             dis.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+                    {
+                        Intent i=new Intent(RasActivity.this,MainChatActivity.class);
                     i.putExtra("forum", "ecell");
                     startActivity(i);
-                }
+                }}
             });
         }
 
@@ -364,8 +569,8 @@ CardView dis=findViewById(R.id.discuss);
             fb.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    FACEBOOK_URL = "https://www.facebook.com/WieMeet2k15/";
-                    FACEBOOK_PAGE_ID = "WieMeet2k15";
+                    FACEBOOK_URL = "https://www.facebook.com/BVP-IEEE-GAMMA-310761423006269/";
+                    FACEBOOK_PAGE_ID = "BVP-IEEE-GAMMA-310761423006269";
                     Intent facebookIntent = new Intent(Intent.ACTION_VIEW);
                     String facebookUrl = getFacebookPageURL(RasActivity.this);
                     facebookIntent.setData(Uri.parse(facebookUrl));
@@ -375,10 +580,29 @@ CardView dis=findViewById(R.id.discuss);
             dis.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+                    {
+                        Intent i=new Intent(RasActivity.this,MainChatActivity.class);
                     i.putExtra("forum", "gamma");
                     startActivity(i);
-                }
+                }}
             });
 
         }
@@ -396,8 +620,8 @@ CardView dis=findViewById(R.id.discuss);
             fb.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    FACEBOOK_URL = "https://www.facebook.com/WieMeet2k15/";
-                    FACEBOOK_PAGE_ID = "WieMeet2k15";
+                    FACEBOOK_URL = "https://www.facebook.com/BVCOE-Quizzing-Club-2048443498818392/?modal=admin_todo_tour";
+                    FACEBOOK_PAGE_ID = "BVCOE-Quizzing_Club";
                     Intent facebookIntent = new Intent(Intent.ACTION_VIEW);
                     String facebookUrl = getFacebookPageURL(RasActivity.this);
                     facebookIntent.setData(Uri.parse(facebookUrl));
@@ -407,10 +631,29 @@ CardView dis=findViewById(R.id.discuss);
             dis.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i=new Intent(RasActivity.this,MainChatActivity.class);
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+                    {
+                        Intent i=new Intent(RasActivity.this,MainChatActivity.class);
                     i.putExtra("forum", "bqc");
                     startActivity(i);
-                }
+                }}
             });
 
         }

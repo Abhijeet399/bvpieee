@@ -4,13 +4,37 @@
     android:layout_height="match_parent"
     android:background="@color/black">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="7dp"
+        android:id="@+id/ii">
+<ImageView
+    android:layout_marginStart="18dp"
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+
+    android:src="@drawable/ic_lock_black_24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="7dp"
+            android:gravity="center_vertical"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:text="CONTENT LOCKED"
+            android:textColor="@color/white" />
+    </LinearLayout>
     <TextView
-        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="18dp"
+        android:layout_below="@id/ii"
         android:layout_marginTop="14dp"
         android:textColor="@color/white"
         android:paddingBottom="15dp"

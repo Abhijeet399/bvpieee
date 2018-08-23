@@ -22,38 +22,36 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Main2Activity"
             android:label="BVPIEEE"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RasActivity">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".Main2Activity" />
-        </activity>
-
-        <activity android:name=".ResourcesActivity">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".Main2Activity" />
-    </activity>
-        <activity android:name=".MainChatActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Main2Activity" />
         </activity>
-        <activity android:name=".VideosActivity" >
+        <activity android:name=".ResourcesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Main2Activity" />
+        </activity>
+        <activity android:name=".MainChatActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Main2Activity" />
+        </activity>
+        <activity android:name=".VideosActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ResourcesActivity" />
         </activity>
-        <activity android:name=".AllEventsActivity" >
+        <activity android:name=".AllEventsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Main2Activity" />
         </activity>
-        <activity android:name=".Main3Activity" >
+        <activity android:name=".Main3Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Main2Activity" />
@@ -63,6 +61,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".RasActivity" />
         </activity>
+
     </application>
 
 </manifest>

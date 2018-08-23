@@ -32,7 +32,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
 android:textColor="@color/white"
-            app:colorClickableText="@color/colorPrimary"
+            app:colorClickableText="@color/cardview_light_background"
             app:trimExpandedText="Read more"
             app:trimLength="200"
             app:trimMode="trimModeLength"

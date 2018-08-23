@@ -20,7 +20,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
@@ -33,6 +35,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.StorageReference;
+import com.wajahatkarim3.easyflipview.EasyFlipView;
 
 import java.util.HashMap;
 
@@ -44,7 +47,7 @@ public class Main2Activity extends AppCompatActivity
     static int chapterno;
     static   int verified_ieee=0;
     private StorageReference mStorageRef;
-
+ScrollView scroll;
     TextView chapters1;
     TextView chapters2,
      chapters3,
@@ -81,7 +84,7 @@ public class Main2Activity extends AppCompatActivity
 
 
 
-
+scroll=findViewById(R.id.scroll);
         chapters1 = (TextView) findViewById(R.id.chapters1);
         chapters2 = (TextView) findViewById(R.id.chapters2);
         chapters3 =  findViewById(R.id.chapters3);
@@ -95,6 +98,13 @@ public class Main2Activity extends AppCompatActivity
         sigs6 =  findViewById(R.id.sigs6);
         // sigs7 =(ImageView ) findViewById(R.id.sigs7);
 
+        TextView other=findViewById(R.id.other);
+        other.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Main2Activity.this,AllEventsActivity.class));
+            }
+        });
 
 
 
@@ -123,10 +133,10 @@ public class Main2Activity extends AppCompatActivity
         TextView topicc=findViewById(R.id.topic);
         TextView desc_txt=findViewById(R.id.desc);
 
-//        desc_txt.setText(desc);
-//        datee.setText(date);
-      //  timee.setText(time);
-     //   topicc.setText(topic);
+      desc_txt.setText(desc);
+        datee.setText(date);
+       timee.setText(time);
+       topicc.setText(topic);
     //    timee.setText(time);
 
      /*   EasyFlipView easyFlipView = (EasyFlipView) findViewById(R.id.easyflip);
@@ -146,6 +156,23 @@ public class Main2Activity extends AppCompatActivity
         });
 
 */
+        EasyFlipView easyFlipView = (EasyFlipView) findViewById(R.id.easyflip);
+        //   EasyFlipView.FlipState flipSide = easyFlipView.getCurrentFlipState();
+
+        easyFlipView.flipTheView();
+        easyFlipView.setOnFlipListener(new EasyFlipView.OnFlipAnimationListener() {
+            @Override
+            public void onViewFlipCompleted(EasyFlipView flipView, EasyFlipView.FlipState newCurrentSide)
+            {
+
+                // ...
+                // Your code goes here
+                // ...
+
+            }
+        });
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -380,6 +407,16 @@ public class Main2Activity extends AppCompatActivity
             chapters3.setVisibility(View.VISIBLE);
             chapters4.setVisibility(View.VISIBLE);
             chapters5.setVisibility(View.VISIBLE);
+
+            scroll.post(new Runnable() {
+                @Override
+                public void run() {
+                    scroll.fullScroll(View.FOCUS_DOWN);
+
+                }
+            });
+
+
             upd=true;
             upd2=false;
             sigs1.setVisibility(View.GONE);
@@ -418,7 +455,13 @@ public class Main2Activity extends AppCompatActivity
             chapters3.setVisibility(View.GONE);
             chapters4.setVisibility(View.GONE);
             chapters5.setVisibility(View.GONE);
+scroll.post(new Runnable() {
+    @Override
+    public void run() {
+        scroll.fullScroll(View.FOCUS_DOWN);
 
+    }
+});
 
 
 
@@ -479,6 +522,7 @@ public class Main2Activity extends AppCompatActivity
             TextView emailid=alertLayout.findViewById(R.id.mail);
             TextView ieeeacess=alertLayout.findViewById(R.id.ieeemem);
 
+            ImageView close=alertLayout.findViewById(R.id.close);
             if (verified_ieee==1)
             {
                 ieeeacess.setText("You can access everything in the app for free !");
@@ -494,8 +538,14 @@ public class Main2Activity extends AppCompatActivity
 
 
 
-            AlertDialog dialog = alert.create();
+            final AlertDialog dialog = alert.create();
             dialog.show();
+            close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.cancel();
+                }
+            });
 
 
 
@@ -504,7 +554,7 @@ public class Main2Activity extends AppCompatActivity
 
 
 
-            } else if (id == R.id.ress) {
+        } else if (id == R.id.ress) {
 
 
             if (verified_ieee==0)
@@ -516,8 +566,6 @@ public class Main2Activity extends AppCompatActivity
 
                 // this is set the view from XML inside AlertDialog
                 alert.setView(alertLayout);
-                alert.setTitle("Content locked ");
-                alert.setIcon(R.drawable.ic_lock_black_24dp);
 
 
 
@@ -549,8 +597,6 @@ public class Main2Activity extends AppCompatActivity
 
                 // this is set the view from XML inside AlertDialog
                 alert.setView(alertLayout);
-                alert.setTitle("Content locked ");
-                alert.setIcon(R.drawable.ic_lock_black_24dp);
 
 
 
@@ -820,7 +866,7 @@ void nextevent()
                 editor.putString("date", String.valueOf(nxt_date[0]));
                 editor.putString("time", String.valueOf(nxt_time[0]));
                 editor.putString("topic", String.valueOf(nxt_topic[0]));
-                editor.putString("desac", String.valueOf(nxt_desc[0]));
+                editor.putString("desc", String.valueOf(nxt_desc[0]));
 
                 editor.apply();
 
@@ -830,11 +876,11 @@ void nextevent()
                 TextView topicc=findViewById(R.id.topic);
                 TextView desc_txt=findViewById(R.id.desc);
 
-            //    desc_txt.setText(nxt_desc[0]);
-          //      datee.setText(nxt_date[0]);
-                //  timee.setText(time);
-             //   topicc.setText(nxt_topic[0]);
-           //     timee.setText(nxt_time[0]);
+               desc_txt.setText(nxt_desc[0]);
+                datee.setText(nxt_date[0]);
+           //      timee.setText(time);
+                topicc.setText(nxt_topic[0]);
+                timee.setText(nxt_time[0]);
 
 
             }
