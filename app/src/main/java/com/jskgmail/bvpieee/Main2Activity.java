@@ -830,8 +830,7 @@ if(value.equals(apnamail))   {
 
 
 
-void nextevent()
-{
+void nextevent() {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
 
@@ -850,19 +849,19 @@ void nextevent()
         public void onDataChange(DataSnapshot dataSnapshot) {
             // This method is called once with the initial value and again
             // whenever data at this location is updated.
-            for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()) {
+            for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
 
                 if (dataSnapshot1.getKey().equals("date"))
                     nxt_date[0] = dataSnapshot1.getValue(String.class);
-                 if (dataSnapshot1.getKey().equals("time"))
-                     nxt_time[0] = dataSnapshot1.getValue(String.class);
-                 if (dataSnapshot1.getKey().equals("topic"))
-                     nxt_topic[0] = dataSnapshot1.getValue(String.class);
+                if (dataSnapshot1.getKey().equals("time"))
+                    nxt_time[0] = dataSnapshot1.getValue(String.class);
+                if (dataSnapshot1.getKey().equals("topic"))
+                    nxt_topic[0] = dataSnapshot1.getValue(String.class);
                 if (dataSnapshot1.getKey().equals("desc"))
                     nxt_desc[0] = dataSnapshot1.getValue(String.class);
 
 
-                 SharedPreferences.Editor editor = getSharedPreferences("nxtevent", MODE_PRIVATE).edit();
+                SharedPreferences.Editor editor = getSharedPreferences("nxtevent", MODE_PRIVATE).edit();
                 editor.putString("date", String.valueOf(nxt_date[0]));
                 editor.putString("time", String.valueOf(nxt_time[0]));
                 editor.putString("topic", String.valueOf(nxt_topic[0]));
@@ -871,37 +870,48 @@ void nextevent()
                 editor.apply();
 
 
-                TextView datee=findViewById(R.id.date);
-                TextView timee=findViewById(R.id.time);
-                TextView topicc=findViewById(R.id.topic);
-                TextView desc_txt=findViewById(R.id.desc);
+                TextView datee = findViewById(R.id.date);
+                TextView timee = findViewById(R.id.time);
+                TextView topicc = findViewById(R.id.topic);
+                TextView desc_txt = findViewById(R.id.desc);
 
-               desc_txt.setText(nxt_desc[0]);
+                desc_txt.setText(nxt_desc[0]);
                 datee.setText(nxt_date[0]);
-           //      timee.setText(time);
+                //      timee.setText(time);
                 topicc.setText(nxt_topic[0]);
                 timee.setText(nxt_time[0]);
 
 
             }
         }
+
         @Override
         public void onCancelled(DatabaseError error) {
             // Failed to read value
         }
     });
 
+    /*
+    String channelId  = getString(R.string.default_notification_channel_id);
+    String channelName = getString(R.string.default_notification_channel_name);
+    NotificationManager notificationManager =
+            getSystemService(NotificationManager.class);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        notificationManager.createNotificationChannel(new NotificationChannel(channelId,
+                channelName, NotificationManager.IMPORTANCE_LOW));
+    }
+    FirebaseMessaging.getInstance().subscribeToTopic("notification")
+            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (!task.isSuccessful()) {
+                    }
+                }
+            });
 
+
+*/
 
 }
-
-
-
-
-
-
-
-
-
 
 }

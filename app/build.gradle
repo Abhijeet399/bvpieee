@@ -6,7 +6,7 @@ android {
         applicationId "com.jskgmail.bvpieee"
         minSdkVersion 19
         targetSdkVersion 26
-        versionCode 3
+        versionCode 5
         versionName "1.002"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
@@ -46,12 +46,13 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:10.0.1'
     implementation 'com.squareup.picasso:picasso:2.3.2'
 
+
+
     implementation 'com.github.bumptech.glide:glide:3.8.0'
     implementation 'com.github.johnkil.android-robototextview:robototextview:4.0.0'
     implementation 'com.borjabravo:readmoretextview:2.0.1'
     implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.0'
     implementation 'com.github.AnthonyFermin:DropDownView:1.0.1'
-    implementation 'com.google.firebase:firebase-messaging:10.0.1'
     compile 'com.github.bumptech.glide:glide:3.7.0'
 
     testImplementation 'junit:junit:4.12'
