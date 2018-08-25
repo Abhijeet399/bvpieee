@@ -61,8 +61,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".RasActivity" />
         </activity>
-
-
+        <activity android:name=".ResourcePDFActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".VideosActivity" />
+        </activity>
     </application>
 
 </manifest>

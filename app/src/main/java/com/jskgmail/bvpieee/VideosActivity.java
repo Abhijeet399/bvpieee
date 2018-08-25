@@ -1,8 +1,11 @@
 package com.jskgmail.bvpieee;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.pierfrancescosoffritti.youtubeplayer.player.AbstractYouTubePlayerListener;
 import com.pierfrancescosoffritti.youtubeplayer.player.YouTubePlayer;
@@ -22,6 +25,18 @@ public class VideosActivity extends AppCompatActivity {
         actionBar.setHomeAsUpIndicator(R.drawable.ic_home_black_24dp);
         actionBar.setDisplayShowHomeEnabled(true);
         go1();
+
+
+            Button pdf=findViewById(R.id.pdf);
+        pdf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(VideosActivity.this,ResourcePDFActivity.class));
+            }
+        });
+        if (ResourcePDFActivity.link.equals("na"))
+            pdf.setVisibility(View.GONE);
+
 
     }
     void go1() {

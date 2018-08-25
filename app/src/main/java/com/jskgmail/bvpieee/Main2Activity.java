@@ -576,11 +576,12 @@ scroll.post(new Runnable() {
             }
             else
 
+            {
+                Intent i = (new Intent(Main2Activity.this, ResourcesActivity.class));
+i.putExtra("forum","all");
+startActivity(i);
 
-            startActivity(new Intent(Main2Activity.this,ResourcesActivity.class));
-
-
-
+            }
 
 
 

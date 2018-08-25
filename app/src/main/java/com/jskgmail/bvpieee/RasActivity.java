@@ -63,32 +63,6 @@ CardView dis=findViewById(R.id.discuss);
             }
         });
 
-        res.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (Main2Activity.verified_ieee==0)
-                {
-                    LayoutInflater inflater = getLayoutInflater();
-                    View alertLayout = inflater.inflate(R.layout.notieeemem, null);
-
-                    AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
-
-                    // this is set the view from XML inside AlertDialog
-                    alert.setView(alertLayout);
-
-
-
-
-                    AlertDialog dialog = alert.create();
-                    dialog.show();
-
-                }
-                else
-
-
-                startActivity(new Intent(RasActivity.this,ResourcesActivity.class));
-            }
-        });
 
 
         abt.setOnClickListener(new View.OnClickListener() {
@@ -157,6 +131,46 @@ CardView dis=findViewById(R.id.discuss);
                     startActivity(i);}
                 }
             });
+
+
+
+            res.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+
+                    {
+                        Intent i=new Intent(RasActivity.this,ResourcesActivity.class);
+                        ResourcesActivity.forum="ras";
+                        startActivity(i);
+                    }
+                }
+            });
+
+
+
+
+
+
+
+
         }
         else
         if (Main2Activity.chapterno==2){
@@ -207,6 +221,45 @@ CardView dis=findViewById(R.id.discuss);
                 }
             });
 
+
+
+            res.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+
+                    {
+                        Intent i=new Intent(RasActivity.this,ResourcesActivity.class);
+ResourcesActivity.forum="cs";
+startActivity(i);
+                    }
+                }
+            });
+
+
+
+
+
+
+
+
         }
         else
         if (Main2Activity.chapterno==4){
@@ -255,6 +308,42 @@ CardView dis=findViewById(R.id.discuss);
                     startActivity(i);
                 }}
             });
+
+
+
+            res.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+
+                    {
+                        Intent i=new Intent(RasActivity.this,ResourcesActivity.class);
+                        ResourcesActivity.forum="ias";
+                        startActivity(i);
+                    }
+                }
+            });
+
+
+
+
         }
         else
         if (Main2Activity.chapterno==5){
@@ -299,6 +388,38 @@ CardView dis=findViewById(R.id.discuss);
                     i.putExtra("forum", "hkn");
                     startActivity(i);
                 }
+                }
+            });
+
+
+
+            res.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+
+                    {
+                        Intent i=new Intent(RasActivity.this,ResourcesActivity.class);
+                        ResourcesActivity.forum="hkn";
+                        startActivity(i);
+                    }
                 }
             });
         }
@@ -353,6 +474,41 @@ CardView dis=findViewById(R.id.discuss);
                     startActivity(i);
                 }}
             });
+
+
+
+            res.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+
+                    {
+                        Intent i=new Intent(RasActivity.this,ResourcesActivity.class);
+                        ResourcesActivity.forum="wie";
+                        startActivity(i);
+                    }
+                }
+            });
+
+
+
         }
         else
         if (Main2Activity.chapterno==6){
@@ -400,6 +556,41 @@ CardView dis=findViewById(R.id.discuss);
                         Intent i=new Intent(RasActivity.this,MainChatActivity.class);
                     i.putExtra("forum", "codex");
                     startActivity(i);}
+                }
+            });
+
+
+
+
+
+
+            res.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+
+                    {
+                        Intent i=new Intent(RasActivity.this,ResourcesActivity.class);
+                        ResourcesActivity.forum="codex";
+                        startActivity(i);
+                    }
                 }
             });
         }
@@ -451,6 +642,38 @@ CardView dis=findViewById(R.id.discuss);
                     i.putExtra("forum", "drishti");
                     startActivity(i);
                 }}
+            });
+
+
+
+            res.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+
+                    {
+                        Intent i=new Intent(RasActivity.this,ResourcesActivity.class);
+                        ResourcesActivity.forum=("drishti");
+                        startActivity(i);
+                    }
+                }
             });
         }
 
@@ -504,6 +727,35 @@ CardView dis=findViewById(R.id.discuss);
                 }}
             });
 
+            res.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+
+                    {
+                        Intent i=new Intent(RasActivity.this,ResourcesActivity.class);
+                        ResourcesActivity.forum="rau";
+                        startActivity(i);
+                    }
+                }
+            });
         }
 
         else
@@ -550,9 +802,40 @@ CardView dis=findViewById(R.id.discuss);
                     else
                     {
                         Intent i=new Intent(RasActivity.this,MainChatActivity.class);
-                    i.putExtra("forum", "ecell");
-                    startActivity(i);
+                        ResourcesActivity.forum="ecell";
+                        startActivity(i);
                 }}
+            });
+
+
+            res.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+
+                    {
+                        Intent i=new Intent(RasActivity.this,ResourcesActivity.class);
+                        i.putExtra("forum","ecell");
+                        startActivity(i);
+                    }
+                }
             });
         }
 
@@ -605,6 +888,35 @@ CardView dis=findViewById(R.id.discuss);
                 }}
             });
 
+            res.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+
+                    {
+                        Intent i=new Intent(RasActivity.this,ResourcesActivity.class);
+                        ResourcesActivity.forum="gamma";
+                        startActivity(i);
+                    }
+                }
+            });
         }
 
         else
@@ -654,6 +966,37 @@ CardView dis=findViewById(R.id.discuss);
                     i.putExtra("forum", "bqc");
                     startActivity(i);
                 }}
+            });
+
+
+            res.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (Main2Activity.verified_ieee==0)
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View alertLayout = inflater.inflate(R.layout.notieeemem, null);
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(RasActivity.this);
+
+                        // this is set the view from XML inside AlertDialog
+                        alert.setView(alertLayout);
+
+
+
+
+                        AlertDialog dialog = alert.create();
+                        dialog.show();
+
+                    }
+                    else
+
+                    {
+                        Intent i=new Intent(RasActivity.this,ResourcesActivity.class);
+                        ResourcesActivity.forum="bqc";
+                        startActivity(i);
+                    }
+                }
             });
 
         }
