@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/menu_text"
+    tools:context=".MainSettingActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Subscribe notifications for:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="1dp"
+
+        android:text="You would be notified for every upcoming event of that chapter and SIGs"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/spl1"
+        android:textSize="14sp" />
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ras"
+        android:checked="true"
+        android:layout_margin="10dp"
+        android:text="Robotics And Automation Society"
+        android:textColor="@color/white" />
+
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/cs"
+        android:checked="true"
+        android:text="Computer Society"
+        android:textColor="@color/white" />
+
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/ias"
+        android:checked="true"
+        android:text="Industry And Automation Society"
+        android:textColor="@color/white" />
+
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="HKN Lambda Eta Chapter"
+        android:id="@+id/hkn"
+        android:checked="true"
+        android:textColor="@color/white" />
+
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Women In Engineering"
+        android:id="@+id/wie"
+        android:checked="true"
+        android:textColor="@color/white" />
+
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Code-X"
+        android:id="@+id/codex"
+        android:checked="true"
+        android:textColor="@color/white" />
+
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Drishti"
+        android:id="@+id/drishti"
+        android:checked="true"
+        android:textColor="@color/white" />
+
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/rau"
+        android:checked="true"
+        android:text="Robotics And Automation United"
+        android:textColor="@color/white" />
+
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/ecell"
+        android:checked="true"
+        android:text="Enterpreneurship Cell"
+        android:textColor="@color/white" />
+
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/bqc"
+        android:checked="true"
+        android:text="BVCOE Quiz Club"
+        android:textColor="@color/white" />
+
+
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="GAMMA"
+        android:id="@+id/gamma"
+        android:checked="true"
+        android:textColor="@color/white" />
+
+
+</LinearLayout>
+
+
+
+
+
+
+</ScrollView>

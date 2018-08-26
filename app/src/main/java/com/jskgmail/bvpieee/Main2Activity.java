@@ -20,6 +20,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -36,6 +37,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.StorageReference;
 import com.wajahatkarim3.easyflipview.EasyFlipView;
 
@@ -78,11 +80,14 @@ ScrollView scroll;
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
       //  info_announce=findViewById(R.id.rrr);
 
-
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+     //   startService(new Intent(this, MyFirebaseMessagingService.class));
+        FirebaseMessaging.getInstance().subscribeToTopic("news");
+        //FirebaseMessaging.getInstance().unsubscribeFromTopic("news");
+     //   FirebaseMessaging.getInstance().subscribeToTopic("news1");
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             // Create channel to show notifications.
             String channelId  = getString(R.string.default_notification_channel_id);
@@ -94,6 +99,12 @@ ScrollView scroll;
                         channelName, NotificationManager.IMPORTANCE_LOW));
             }
         }
+
+
+
+
+
+
 scroll=findViewById(R.id.scroll);
         chapters1 = (TextView) findViewById(R.id.chapters1);
         chapters2 = (TextView) findViewById(R.id.chapters2);
@@ -125,6 +136,9 @@ scroll=findViewById(R.id.scroll);
 
         if (ver != null && ver.equals("1")) {
             verified_ieee = 1;
+            startService(new Intent(this, MyServicemsg.class));
+
+
         }
 
         if (verified_ieee==0)
@@ -820,7 +834,8 @@ startActivity(i);
                 String value = dataSnapshot1.getValue(String.class);
                     SharedPreferences prefs = getSharedPreferences("ieee",MODE_PRIVATE);
                     String apnamail = prefs.getString("mail", null);
-if(value.equals(apnamail))   {
+                    assert value != null;
+                    if(value.equals(apnamail))   {
     verified_ieee=1;
     SharedPreferences.Editor editor= getSharedPreferences("ieee",MODE_PRIVATE).edit();
     editor.putString("verified","1");
@@ -842,8 +857,34 @@ if(value.equals(apnamail))   {
     }
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_main2_drawer1,menu);
 
-void nextevent() {
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id=item.getItemId();
+        if(id==R.id.setting) {
+
+            Intent i=new Intent(Main2Activity.this,MainSettingActivity.class);
+            startActivity(i);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+
+
+
+    void nextevent() {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
 

@@ -2,13 +2,13 @@
 <resources>
     <color name="colorPrimary">#11110c</color>
     <color name="colorPrimaryDark">#303f9f</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#02ccff</color>
     <color name="grey_100">#f5f5f5</color>
     <color name="spl">#9ad9ea</color>
 
     <color name="white">#fbfbfb</color>
     <color name="black_overlay">#66000000</color>
-
+    <color name="spl1">#00CCFF</color>
 
     <color name="black">#000000</color>
     <color name="green">#27AE60</color>

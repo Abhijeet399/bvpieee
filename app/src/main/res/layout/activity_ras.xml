@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
 
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/menu_text"
     tools:context=".RasActivity">
 
     <RelativeLayout
@@ -24,7 +25,7 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="700dp"
+            android:layout_height="match_parent"
             android:layout_marginTop="50dp">
 
             <LinearLayout
@@ -41,12 +42,13 @@
 
             <TextView
                 android:id="@+id/event"
-                android:layout_width="369dp"
+                android:layout_width="match_parent"
                 android:layout_height="66dp"
 
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginEnd="4dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="215dp"
                 android:background="@android:color/holo_green_light"
                 android:gravity="center"
@@ -55,7 +57,6 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
-
 
 
             <com.daimajia.slider.library.SliderLayout
@@ -99,12 +100,16 @@
 
             <android.support.v7.widget.CardView
                 android:id="@+id/reso"
-                android:layout_width="175dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignStart="@+id/event"
+
+                android:layout_marginStart="6dp"
                 android:layout_marginTop="303dp"
+
                 android:padding="5dp"
+
                 app:cardCornerRadius="3dp"
                 app:cardElevation="2dp">
 
@@ -147,11 +152,11 @@
 
             <android.support.v7.widget.CardView
                 android:id="@+id/discuss"
-                android:layout_width="177dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@+id/event"
                 android:layout_alignTop="@+id/reso"
-                android:layout_marginEnd="9dp"
+                android:layout_marginEnd="6dp"
                 android:padding="5dp"
                 app:cardCornerRadius="3dp"
                 app:cardElevation="2dp">
@@ -193,11 +198,12 @@
 
             <android.support.v7.widget.CardView
                 android:id="@+id/abt"
-                android:layout_width="174dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/event"
                 android:layout_below="@+id/reso"
-                android:layout_marginBottom="136dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="6dp"
                 android:layout_marginTop="19dp"
                 android:padding="5dp"
                 app:cardCornerRadius="3dp"
@@ -240,17 +246,17 @@
 
             <android.support.v7.widget.CardView
                 android:id="@+id/fb"
-                android:layout_width="175dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@+id/event"
                 android:layout_alignTop="@+id/abt"
-                android:layout_marginEnd="9dp"
+                android:layout_marginEnd="6dp"
                 android:padding="5dp"
                 app:cardCornerRadius="3dp"
                 app:cardElevation="2dp">
 
                 <RelativeLayout
-                    android:layout_width="181dp"
+                    android:layout_width="match_parent"
                     android:layout_height="122dp"
                     android:background="@android:color/holo_orange_light">
 

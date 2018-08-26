@@ -39,6 +39,9 @@ private String society_name="messages";
         actionBar.setDisplayShowHomeEnabled(true);
         Intent intent = getIntent();
 
+
+
+
          forum = intent.getStringExtra("forum");
 
         // TODO: Set up the display name and get the Firebase reference
@@ -49,6 +52,9 @@ private String society_name="messages";
         mInputText = (EditText) findViewById(R.id.messageInput);
         mSendButton = (ImageButton) findViewById(R.id.sendButton);
         mChatListView = (ListView) findViewById(R.id.chat_list_view);
+
+
+
 
         // TODO: Send the message when the "enter" button is pressed
         mInputText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -64,7 +70,63 @@ private String society_name="messages";
         mSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences prefs = getSharedPreferences("ieee",MODE_PRIVATE);
+                String mynaam = prefs.getString("name", "Anonymous");
                 sendMessage();
+
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = null;
+                switch (forum) {
+                    case "ras":
+                        myRef = database.getReference("notifyras");
+                        break;
+                    case "cs":
+                        myRef = database.getReference("notifycs");
+                        break;
+                    case "gen":
+                        myRef = database.getReference("notify");
+                        break;
+                    case "ias":
+                        myRef = database.getReference("notifyias");
+                        break;
+                    case "hkn":
+                        myRef = database.getReference("notifyhkn");
+                        break;
+                    case "wie":
+                        myRef = database.getReference("notifywie");
+                        break;
+                    case "codex":
+                        myRef = database.getReference("notifycodex");
+                        break;
+                    case "drishti":
+                        myRef = database.getReference("notifydrishti");
+                        break;
+                    case "rau":
+                        myRef = database.getReference("notifyrau");
+                        break;
+                    case "bqc":
+                        myRef = database.getReference("notifybqc");
+                        break;
+                    case "edc":
+                        myRef = database.getReference("notifyedc");
+                        break;
+                    case "gamma":
+                        myRef = database.getReference("notifygamma");
+                        break;
+                }
+
+                if (myRef != null)
+
+                    myRef.setValue(mynaam);
+
+
+
+                SharedPreferences.Editor editor =getSharedPreferences("msg", MODE_PRIVATE).edit();
+                editor.putString("lastmsgid", mynaam);
+                editor.apply();
+
+
+
             }
         });
     }
@@ -195,6 +257,7 @@ private String society_name="messages";
     public void onStart() {
         super.onStart();
 
+        MyServicemsg.stop=false;
         switch (forum) {
             case "ras": {
                 society_name="msg_ras";
@@ -281,11 +344,12 @@ private String society_name="messages";
 
 
 
-
+mChatListView.setStackFromBottom(true);
 
 
         mAdapter=new chatListAdapter(this,mDatabaseReference,mDisplayName,society_name);
         mChatListView.setAdapter(mAdapter);
+
     }
 
     @Override
@@ -293,6 +357,15 @@ private String society_name="messages";
         super.onStop();
         // TODO: Remove the Firebase event listener on the adapter.
         mAdapter.cleanup();
+        MyServicemsg.stop=true;
     }
 
+/*
+    @Override
+    public void onPause() {
+        super.onPause();
+       // mAdapter.cleanup();
+        MyServicemsg.stop=true;
+    }
+*/
 }
