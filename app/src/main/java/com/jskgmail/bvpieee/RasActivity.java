@@ -59,7 +59,32 @@ CardView dis=findViewById(R.id.discuss);
         event.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (Main2Activity.chapterno==1)
+                AllEventsActivity.chname="ras";
+                else if (Main2Activity.chapterno==2)
+                    AllEventsActivity.chname="cs";
+                else if (Main2Activity.chapterno==3)
+                    AllEventsActivity.chname="wie";
+                else if (Main2Activity.chapterno==4)
+                    AllEventsActivity.chname="ias";
+                else if (Main2Activity.chapterno==5)
+                    AllEventsActivity.chname="hkn";
+                else if (Main2Activity.chapterno==6)
+                    AllEventsActivity.chname="codex";
+                else if (Main2Activity.chapterno==7)
+                    AllEventsActivity.chname="drishti";
+                else if (Main2Activity.chapterno==8)
+                    AllEventsActivity.chname="rau";
+                else if (Main2Activity.chapterno==9)
+                    AllEventsActivity.chname="ecell";
+                else if (Main2Activity.chapterno==10)
+                    AllEventsActivity.chname="gamma";
+                else if (Main2Activity.chapterno==11)
+                    AllEventsActivity.chname="bqc";
+
+
                 startActivity(new Intent(RasActivity.this,AllEventsActivity.class));
+
             }
         });
 
@@ -991,9 +1016,9 @@ startActivity(i);
                     }
                     else
 
-                    {
+                    {                        ResourcesActivity.forum="bqc";
+
                         Intent i=new Intent(RasActivity.this,ResourcesActivity.class);
-                        ResourcesActivity.forum="bqc";
                         startActivity(i);
                     }
                 }

@@ -53,7 +53,7 @@
         android:maxLines="10"
         android:padding="8dp"
         android:singleLine="false"
-        android:text="Note : You are not an IEEE member so can't access few things freely. If you this is a mistake, please contact us."
+        android:text="Note : You are not an IEEE member so can't access few things freely. If you think this is by mistake, please feel free to contact us."
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/white"
         android:textSize="15sp" />

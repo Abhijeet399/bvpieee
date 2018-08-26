@@ -10,17 +10,17 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white"
+        android:background="@color/black"
 
         >
 
         <ImageView
-            android:layout_width="315dp"
-            android:layout_height="122dp"
+            android:layout_width="287dp"
+            android:layout_height="132dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="171dp"
-            app:srcCompat="@drawable/b" />
+            android:layout_marginTop="140dp"
+            app:srcCompat="@drawable/logos" />
 
 
         <com.victor.loading.rotate.RotateLoading
@@ -39,7 +39,7 @@
 
             android:foregroundGravity="center_vertical|center_horizontal"
 
-            app:loading_color="@color/cardview_dark_background"
+            app:loading_color="@color/white"
             app:loading_width="5dp" />
 
     </RelativeLayout>

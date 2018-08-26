@@ -1,9 +1,10 @@
 package com.jskgmail.bvpieee;
 
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -11,11 +12,16 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.jetradar.desertplaceholder.DesertPlaceholder;
+import com.victor.loading.rotate.RotateLoading;
 
 import java.util.ArrayList;
 
 public class AllEventsActivity extends AppCompatActivity {
 String TAG="ALLEVENTS";
+DesertPlaceholder placeholder;
+RotateLoading rotateLoading;
+static String chname="all";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +32,10 @@ String TAG="ALLEVENTS";
         actionBar.setHomeAsUpIndicator(R.drawable.ic_home_black_24dp);
         actionBar.setDisplayShowHomeEnabled(true);
 
+        rotateLoading=findViewById(R.id.rotateloading);
+
+        rotateLoading.start();
+        placeholder=findViewById(R.id.placeholder);
         final ListView listView= (ListView) findViewById(R.id.lv);
         final ArrayList<String> arrayList1=new ArrayList<>();
         final ArrayList<String> arrayList2=new ArrayList<>();
@@ -58,34 +68,92 @@ String TAG="ALLEVENTS";
                 //  arrayList3.add("cs");
                 //    arrayList4.add("link");
                 for(DataSnapshot dataSnapshotchap:dataSnapshot.getChildren()) {
-                   // String value = dataSnapshotchap.getKey();
+                  //  String value = dataSnapshotchap.getKey();
 
                  //   Log.e(TAG, "Valuechap is: " + value);
+                    if(dataSnapshotchap.getKey().equals(chname))
+                    {
+                      //  Toast.makeText(getApplicationContext(),dataSnapshotchap.getKey()+"::"+chname,Toast.LENGTH_SHORT).show();
 
-                    for (DataSnapshot dataSnapshot1 : dataSnapshotchap.getChildren()) {
+                        for (DataSnapshot dataSnapshot1 : dataSnapshotchap.getChildren()) {
 
-                        if (dataSnapshot1.getKey().equals("by"))
-                            arrayList3.add(dataSnapshot1.getValue(String.class));
-else   if (dataSnapshot1.getKey().equals("date"))
-                            arrayList2.add(dataSnapshot1.getValue(String.class));
-else
-                        if (dataSnapshot1.getKey().equals("time"))
-                            arrayList4.add(dataSnapshot1.getValue(String.class));
-else   if (dataSnapshot1.getKey().equals("topic"))
-                            arrayList1.add(dataSnapshot1.getValue(String.class));
-else   if (dataSnapshot1.getKey().equals("venue"))
-                            arrayList5.add(dataSnapshot1.getValue(String.class));
-                        else   if (dataSnapshot1.getKey().equals("pic"))
-                            arrayList6.add(dataSnapshot1.getValue(String.class));
+                            {
 
+
+                                switch (dataSnapshot1.getKey()) {
+                                    case "by":
+                                        arrayList3.add(dataSnapshot1.getValue(String.class));
+                                        break;
+                                    case "date":
+                                        arrayList2.add(dataSnapshot1.getValue(String.class));
+                                        break;
+                                    case "time":
+                                        arrayList4.add(dataSnapshot1.getValue(String.class));
+                                        break;
+                                    case "topic":
+                                        arrayList1.add(dataSnapshot1.getValue(String.class));
+                                        break;
+                                    case "venue":
+                                        arrayList5.add(dataSnapshot1.getValue(String.class));
+                                        break;
+                                    case "pic":
+                                        arrayList6.add(dataSnapshot1.getValue(String.class));
+                                        break;
+                                }
+
+
+
+
+                            }
+                        }}
+                            else if(chname.equals("all")){
+
+
+                        for (DataSnapshot dataSnapshot1 : dataSnapshotchap.getChildren()) {
+
+                            {
+                                switch (dataSnapshot1.getKey()) {
+                                    case "by":
+                                        arrayList3.add(dataSnapshot1.getValue(String.class));
+                                        break;
+                                    case "date":
+                                        arrayList2.add(dataSnapshot1.getValue(String.class));
+                                        break;
+                                    case "time":
+                                        arrayList4.add(dataSnapshot1.getValue(String.class));
+                                        break;
+                                    case "topic":
+                                        arrayList1.add(dataSnapshot1.getValue(String.class));
+                                        break;
+                                    case "venue":
+                                        arrayList5.add(dataSnapshot1.getValue(String.class));
+                                        break;
+                                    case "pic":
+                                        arrayList6.add(dataSnapshot1.getValue(String.class));
+                                        break;
+                                }
+
+
+
+
+
+                            }
+                        }
 
                     }
                 }
 
+                rotateLoading.stop();
                 ListViewAdapter1 adapter=new ListViewAdapter1(AllEventsActivity.this,arrayList1,arrayList2,
                         arrayList3,arrayList4,arrayList5,arrayList6);
                 listView.setAdapter(adapter);
 
+                if (arrayList1.isEmpty())
+                {
+                    placeholder.setVisibility(View.VISIBLE);
+                }
+                else
+                    placeholder.setVisibility(View.GONE);
 
             }
 

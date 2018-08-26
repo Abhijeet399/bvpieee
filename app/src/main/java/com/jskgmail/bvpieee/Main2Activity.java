@@ -1,5 +1,7 @@
 package com.jskgmail.bvpieee;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -44,7 +46,7 @@ import ru.dimorinny.floatingtextbutton.FloatingTextButton;
 public class Main2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, BaseSliderView.OnSliderClickListener  {
     private SliderLayout mDemoSlider;
-    static int chapterno;
+    static int chapterno=99;
     static   int verified_ieee=0;
     private StorageReference mStorageRef;
 ScrollView scroll;
@@ -81,9 +83,17 @@ ScrollView scroll;
 
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            // Create channel to show notifications.
+            String channelId  = getString(R.string.default_notification_channel_id);
+            String channelName = getString(R.string.default_notification_channel_name);
+            NotificationManager notificationManager =
+                    getSystemService(NotificationManager.class);
+            if (notificationManager != null) {
+                notificationManager.createNotificationChannel(new NotificationChannel(channelId,
+                        channelName, NotificationManager.IMPORTANCE_LOW));
+            }
+        }
 scroll=findViewById(R.id.scroll);
         chapters1 = (TextView) findViewById(R.id.chapters1);
         chapters2 = (TextView) findViewById(R.id.chapters2);
@@ -578,7 +588,7 @@ scroll.post(new Runnable() {
 
             {
                 Intent i = (new Intent(Main2Activity.this, ResourcesActivity.class));
-i.putExtra("forum","all");
+ResourcesActivity.forum="all";
 startActivity(i);
 
             }
@@ -625,7 +635,9 @@ startActivity(i);
 
         }
         else if (id == R.id.nav_gallery){
-            startActivity(new Intent(Main2Activity.this,AllEventsActivity.class));
+            Intent i=(new Intent(Main2Activity.this,AllEventsActivity.class));
+            AllEventsActivity.chname="all";
+            startActivity(i);
 
         }
     /*    else if (id == R.id.spon) {

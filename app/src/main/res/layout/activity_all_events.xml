@@ -18,4 +18,32 @@
         android:background="@color/menu_text"
         android:divider="@null"
         android:dividerHeight="0dp" />
+
+
+    <com.jetradar.desertplaceholder.DesertPlaceholder
+        android:id="@+id/placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:dp_buttonText="NOTHING TO SHOW"
+        app:dp_message="NO EVENTS IN NEAR FUTURE" />
+
+    <com.victor.loading.rotate.RotateLoading
+
+        android:id="@+id/rotateloading"
+
+        android:layout_width="57dp"
+
+        android:layout_height="57dp"
+android:layout_centerVertical="true"
+
+        android:layout_centerHorizontal="true"
+
+
+        android:foregroundGravity="center_vertical|center_horizontal"
+
+        app:loading_color="@color/white"
+        app:loading_width="5dp" />
+
+
 </RelativeLayout>

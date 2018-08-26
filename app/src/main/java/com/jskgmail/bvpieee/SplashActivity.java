@@ -3,6 +3,7 @@ package com.jskgmail.bvpieee;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -48,6 +49,23 @@ public class SplashActivity extends AppCompatActivity {
 
     FirebaseAuth.AuthStateListener mAuthListner;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -83,6 +101,8 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
         rotateLoading = findViewById(R.id.rotateloading);
@@ -138,6 +158,39 @@ public class SplashActivity extends AppCompatActivity {
 
 
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
