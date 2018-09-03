@@ -116,7 +116,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="122dp"
-                    android:background="@color/colorAccent"
+                    android:background="@color/accent"
                     android:padding="5dp">
 
                     <ImageView

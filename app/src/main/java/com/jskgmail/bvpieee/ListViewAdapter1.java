@@ -1,7 +1,11 @@
 package com.jskgmail.bvpieee;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AlertDialog;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,9 +29,10 @@ public class ListViewAdapter1 extends BaseAdapter {
     ArrayList<String> time;
     ArrayList<String> venue;
     ArrayList<String> img;
+    ArrayList<String> reglink;
 
 
-    public ListViewAdapter1(AllEventsActivity context, ArrayList<String> name, ArrayList<String> date, ArrayList<String> by, ArrayList<String> time,ArrayList<String> venue,ArrayList<String> img)
+    public ListViewAdapter1(AllEventsActivity context, ArrayList<String> name, ArrayList<String> date, ArrayList<String> by, ArrayList<String> time,ArrayList<String> venue,ArrayList<String> img,ArrayList<String> reglink)
     {
         super();
         this.context=context;
@@ -37,6 +42,7 @@ public class ListViewAdapter1 extends BaseAdapter {
         this.time=time;
         this.venue=venue;
         this.img=img;
+        this.reglink=reglink;
 
     }
 
@@ -60,6 +66,7 @@ public class ListViewAdapter1 extends BaseAdapter {
     public class ViewHolder{
         TextView name;
         TextView date;
+        TextView registerhere;
     TextView by,time,venue;
         RelativeLayout rl;
 LinearLayout poster;
@@ -68,7 +75,7 @@ ImageView posterimg;
     }
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        ViewHolder holder;
+        final ViewHolder holder;
 
 
         LayoutInflater inflater=context.getLayoutInflater();
@@ -79,7 +86,7 @@ ImageView posterimg;
 
             holder.name=(TextView)convertView.findViewById(R.id.name);
 
-
+holder.registerhere=(TextView)convertView.findViewById(R.id.registerhere);
             holder.date=(TextView)convertView.findViewById(R.id.datee);
             holder.by=convertView.findViewById(R.id.byy);
             holder.time=convertView.findViewById(R.id.timee);
@@ -96,10 +103,29 @@ ImageView posterimg;
             holder.time.setText(time.get(position));
             holder.venue.setText(venue.get(position));
 
+            SpannableString content = new SpannableString("  Register here ->");
+            content.setSpan(new UnderlineSpan(), 2, content.length(), 0);
+            holder.registerhere.setText(content);
+
+            if (reglink.get(position).equals("na"))
+            {
+                holder.registerhere.setVisibility(View.GONE);
+            }
+            else holder.registerhere.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(reglink.get(position)));
+                    context.startActivity(browserIntent);
+                }
+            });
 
 
 
-            if (img.get(position).equals(""))
+
+
+            if (img.get(position).equals("na"))
 {
     holder.poster.setVisibility(View.GONE);
 }

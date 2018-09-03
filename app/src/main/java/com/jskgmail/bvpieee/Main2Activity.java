@@ -123,6 +123,7 @@ scroll=findViewById(R.id.scroll);
         other.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                AllEventsActivity.chname="all";
                 startActivity(new Intent(Main2Activity.this,AllEventsActivity.class));
             }
         });
@@ -649,8 +650,9 @@ startActivity(i);
 
         }
         else if (id == R.id.nav_gallery){
-            Intent i=(new Intent(Main2Activity.this,AllEventsActivity.class));
             AllEventsActivity.chname="all";
+
+            Intent i=(new Intent(Main2Activity.this,AllEventsActivity.class));
             startActivity(i);
 
         }

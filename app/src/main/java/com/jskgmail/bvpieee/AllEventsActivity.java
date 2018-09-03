@@ -16,6 +16,7 @@ import com.jetradar.desertplaceholder.DesertPlaceholder;
 import com.victor.loading.rotate.RotateLoading;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class AllEventsActivity extends AppCompatActivity {
 String TAG="ALLEVENTS";
@@ -43,6 +44,7 @@ static String chname="all";
         final ArrayList<String> arrayList4=new ArrayList<>();
         final ArrayList<String> arrayList5=new ArrayList<>();
         final ArrayList<String> arrayList6=new ArrayList<>();
+        final ArrayList<String> arrayList7=new ArrayList<>();
 
 
 
@@ -80,24 +82,34 @@ static String chname="all";
                             {
 
 
-                                switch (dataSnapshot1.getKey()) {
+                                switch (Objects.requireNonNull(dataSnapshot1.getKey())) {
                                     case "by":
+                                        if (!Objects.equals(dataSnapshot1.getValue(String.class), ""))
                                         arrayList3.add(dataSnapshot1.getValue(String.class));
                                         break;
                                     case "date":
+                                        if (!Objects.equals(dataSnapshot1.getValue(String.class), ""))
                                         arrayList2.add(dataSnapshot1.getValue(String.class));
                                         break;
                                     case "time":
+                                        if (!Objects.equals(dataSnapshot1.getValue(String.class), ""))
                                         arrayList4.add(dataSnapshot1.getValue(String.class));
                                         break;
                                     case "topic":
-                                        arrayList1.add(dataSnapshot1.getValue(String.class));
+                                        if (!Objects.equals(dataSnapshot1.getValue(String.class), ""))
+                                            arrayList1.add(dataSnapshot1.getValue(String.class));
                                         break;
                                     case "venue":
+                                        if (!Objects.equals(dataSnapshot1.getValue(String.class), ""))
                                         arrayList5.add(dataSnapshot1.getValue(String.class));
                                         break;
                                     case "pic":
+                                        if (!Objects.equals(dataSnapshot1.getValue(String.class), ""))
                                         arrayList6.add(dataSnapshot1.getValue(String.class));
+                                        break;
+                                    case "link":
+                                        if (!Objects.equals(dataSnapshot1.getValue(String.class), ""))
+                                        arrayList7.add(dataSnapshot1.getValue(String.class));
                                         break;
                                 }
 
@@ -112,24 +124,34 @@ static String chname="all";
                         for (DataSnapshot dataSnapshot1 : dataSnapshotchap.getChildren()) {
 
                             {
-                                switch (dataSnapshot1.getKey()) {
+                                switch (Objects.requireNonNull(dataSnapshot1.getKey())) {
                                     case "by":
+                                        if (!Objects.equals(dataSnapshot1.getValue(String.class), ""))
                                         arrayList3.add(dataSnapshot1.getValue(String.class));
                                         break;
                                     case "date":
+                                        if (!Objects.equals(dataSnapshot1.getValue(String.class), ""))
                                         arrayList2.add(dataSnapshot1.getValue(String.class));
                                         break;
                                     case "time":
+                                        if (!Objects.equals(dataSnapshot1.getValue(String.class), ""))
                                         arrayList4.add(dataSnapshot1.getValue(String.class));
                                         break;
                                     case "topic":
+                                        if (!Objects.equals(dataSnapshot1.getValue(String.class), ""))
                                         arrayList1.add(dataSnapshot1.getValue(String.class));
                                         break;
                                     case "venue":
+                                        if (!Objects.equals(dataSnapshot1.getValue(String.class), ""))
                                         arrayList5.add(dataSnapshot1.getValue(String.class));
                                         break;
                                     case "pic":
+                                        if (!Objects.equals(dataSnapshot1.getValue(String.class), ""))
                                         arrayList6.add(dataSnapshot1.getValue(String.class));
+                                        break;
+                                    case "link":
+                                        if (!Objects.equals(dataSnapshot1.getValue(String.class), ""))
+                                        arrayList7.add(dataSnapshot1.getValue(String.class));
                                         break;
                                 }
 
@@ -145,7 +167,7 @@ static String chname="all";
 
                 rotateLoading.stop();
                 ListViewAdapter1 adapter=new ListViewAdapter1(AllEventsActivity.this,arrayList1,arrayList2,
-                        arrayList3,arrayList4,arrayList5,arrayList6);
+                        arrayList3,arrayList4,arrayList5,arrayList6,arrayList7);
                 listView.setAdapter(adapter);
 
                 if (arrayList1.isEmpty())

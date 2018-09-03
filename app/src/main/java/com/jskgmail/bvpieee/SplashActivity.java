@@ -144,8 +144,8 @@ public class SplashActivity extends AppCompatActivity {
                     // This method will be executed once the timer is over
                     // Start your app main activity
 
-                    rotateLoading.stop();
                     signIn();
+                    rotateLoading.stop();
 
                     //  startActivity(new Intent(SplashActivity.this, Main2Activity.class));
 
@@ -192,12 +192,6 @@ public class SplashActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
         mAuth = FirebaseAuth.getInstance();
 
         mAuthListner = new FirebaseAuth.AuthStateListener() {
@@ -205,6 +199,23 @@ public class SplashActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null) {
                    // rotateLoading.stop();
+
+
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    SharedPreferences.Editor editor= getSharedPreferences("ieee",MODE_PRIVATE).edit();
+                    assert user != null;
+
+                    String mail=user.getEmail();
+                    String nam=user.getDisplayName();
+
+                    editor.putString("mail",mail);
+                    editor.putString("name",nam);
+
+                    editor.apply();
+
+                    Log.e("NAMELOGIN", user.getDisplayName());
+
+
 
                 }
             }
@@ -250,12 +261,18 @@ public class SplashActivity extends AppCompatActivity {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if (result.isSuccess()) {
                 rotateLoading.stop();
-                 startActivity(new Intent(SplashActivity.this, Main2Activity.class));
-                finish();
+
 
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
+                assert account != null;
+                Log.e("aaaaaaacccccccc", String.valueOf(account));
                 firebaseAuthWithGoogle(account);
+
+                startActivity(new Intent(SplashActivity.this, Main2Activity.class));
+
+                finish();
+
             } else {
                 Toast.makeText(SplashActivity.this, "Sign In Error", Toast.LENGTH_LONG).show();
             }
@@ -264,8 +281,8 @@ public class SplashActivity extends AppCompatActivity {
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~firebaseAuthWithGoogle
 
-    private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
 
+    private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
 
 
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
@@ -277,16 +294,23 @@ public class SplashActivity extends AppCompatActivity {
                             rotateLoading.stop();
                             FirebaseUser user = mAuth.getCurrentUser();
                             SharedPreferences.Editor editor= getSharedPreferences("ieee",MODE_PRIVATE).edit();
-                            editor.putString("mail",user.getEmail());
-                            editor.putString("name",user.getDisplayName());
+                            assert user != null;
+
+                            String mail=user.getEmail();
+                            String nam=user.getDisplayName();
+
+                            editor.putString("mail",mail);
+                            editor.putString("name",nam);
 
                             editor.apply();
+
                             Log.e("NAMELOGIN", user.getDisplayName());
 
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("TAG", "signInWithCredential:success");
-//                            FirebaseUser user = mAuth.getCurrentUser();
-//                            updateUI(user);
+
+                         //   FirebaseUser user = mAuth.getCurrentUser();
+                           //updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("TAG", "signInWithCredential:failure", task.getException());
