@@ -166,6 +166,65 @@ static String chname="all";
                 }
 
                 rotateLoading.stop();
+
+
+                if (arrayList2.size()>0)
+                    for (int i = 0; i < arrayList2.size(); ++i)
+                    {
+
+                        for (int j = i + 1; j < arrayList2.size(); ++j)
+                        {
+
+                            if(Integer.parseInt(arrayList2.get(j).replace("/",""))<Integer.parseInt(arrayList2.get(i).replace("/","")))
+                            {
+                                Log.e("dddddd",Integer.parseInt(arrayList2.get(i).replace("/",""))+"");
+
+                                String l=arrayList2.get(i);
+                                String l1=arrayList1.get(i);
+                                String l7=arrayList7.get(i);
+                                String l3=arrayList3.get(i);
+                                String l4=arrayList4.get(i);
+                                String l5=arrayList5.get(i);
+                                String l6=arrayList6.get(i);
+
+                                arrayList2.set(i,arrayList2.get(j));
+                                arrayList2.set((j),l);
+
+                                arrayList1.set(i,arrayList1.get(j));
+                                arrayList1.set((j),l1);
+
+                                arrayList3.set(i,arrayList3.get(j));
+                                arrayList3.set((j),l3);
+
+                                arrayList4.set(i,arrayList4.get(j));
+                                arrayList4.set((j),l4);
+
+                                arrayList5.set(i,arrayList5.get(j));
+                                arrayList5.set((j),l5);
+
+                                arrayList6.set(i,arrayList6.get(j));
+                                arrayList6.set((j),l6);
+
+                                arrayList7.set(i,arrayList7.get(j));
+                                arrayList7.set((j),l7);
+
+
+                            }
+
+                         }
+
+                        }
+
+
+
+
+
+
+
+
+
+
+
                 ListViewAdapter1 adapter=new ListViewAdapter1(AllEventsActivity.this,arrayList1,arrayList2,
                         arrayList3,arrayList4,arrayList5,arrayList6,arrayList7);
                 listView.setAdapter(adapter);
