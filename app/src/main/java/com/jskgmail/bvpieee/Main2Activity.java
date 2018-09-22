@@ -28,6 +28,7 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
@@ -99,6 +100,26 @@ ScrollView scroll;
                         channelName, NotificationManager.IMPORTANCE_LOW));
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -290,6 +311,7 @@ scroll=findViewById(R.id.scroll);
 
 
 
+        go1();
 
 
 
@@ -436,7 +458,8 @@ scroll=findViewById(R.id.scroll);
             scroll.post(new Runnable() {
                 @Override
                 public void run() {
-                    scroll.fullScroll(View.FOCUS_DOWN);
+               //     scroll.fullScroll(View.FOCUS_DOWN);
+                    scroll.smoothScrollTo(0,chapters5.getBottom());
 
                 }
             });
@@ -463,7 +486,7 @@ scroll=findViewById(R.id.scroll);
 
         }
     }
-    public void clicked2(View view){
+    public void clicked2(final View view){
         if(upd2==false){
             // Toast.makeText(this,"In false",Toast.LENGTH_LONG).show();
             sigs1.setVisibility(View.VISIBLE);
@@ -483,8 +506,8 @@ scroll=findViewById(R.id.scroll);
 scroll.post(new Runnable() {
     @Override
     public void run() {
-        scroll.fullScroll(View.FOCUS_DOWN);
-
+     //   scroll.fullScroll(View.FOCUS_DOWN);
+scroll.smoothScrollTo(0,sigs6.getBottom());
     }
 });
 
@@ -546,7 +569,6 @@ scroll.post(new Runnable() {
 
             TextView emailid=alertLayout.findViewById(R.id.mail);
             TextView ieeeacess=alertLayout.findViewById(R.id.ieeemem);
-
             ImageView close=alertLayout.findViewById(R.id.close);
             if (verified_ieee==1)
             {
@@ -969,5 +991,106 @@ startActivity(i);
 */
 
 }
+
+
+
+    void go1(){
+
+        final TextView sp=findViewById(R.id.sp);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        final ImageView adpic=findViewById(R.id.adpic);
+
+        final String[] ads = {""};
+        final String[] link = {""};
+
+        DatabaseReference myRef = database.getReference("ad");
+
+
+        //   myRef.child("1").setValue("jsk1961998@gmail.com");
+        //   myRef.child("2").setValue("82gurcharansingh@gmail.com");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+
+                    if (dataSnapshot1.getKey().equals("ad")) {
+                        ads[0] = dataSnapshot1.getValue(String.class);
+                        if (ads[0] != "") {
+                            sp.setVisibility(View.VISIBLE);
+                            adpic.setVisibility(View.VISIBLE);
+
+                            Glide.with(getApplicationContext()).load(ads[0]).into(adpic);
+                        } else {
+                            sp.setVisibility(View.GONE);
+                            adpic.setVisibility(View.GONE);
+                        }
+
+
+
+
+
+
+
+
+
+                    }
+                    if (dataSnapshot1.getKey().equals("link")) {
+                        link[0] = dataSnapshot1.getValue(String.class);
+                        if (!link[0].equals("")) {
+
+                            adpic.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent i = new Intent(Intent.ACTION_VIEW);
+                                    i.setData(Uri.parse(link[0]));
+                                    startActivity(i);
+
+                                }
+                            });
+                        }}
+
+
+
+
+
+                        }}
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

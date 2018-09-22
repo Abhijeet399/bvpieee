@@ -145,6 +145,7 @@ android:textSize="16dp"
                 android:textSize="17sp" />
 
             <LinearLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -310,6 +311,33 @@ android:padding="4dp"
 
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/aa"
+                android:layout_marginEnd="12dp"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="17dp"
+                android:text="SPONSORED"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/adpic"
+                android:layout_width="400dp"
+                android:layout_height="450dp"
+                android:layout_below="@+id/sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="12dp"
+                android:layout_marginStart="12dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:visibility="gone" />
+
         </LinearLayout>
 
 

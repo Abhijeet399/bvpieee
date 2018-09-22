@@ -32,6 +32,7 @@ import com.victor.loading.rotate.RotateLoading;
 public class SplashActivity extends AppCompatActivity {
     private StorageReference mStorageRef;
     private RotateLoading rotateLoading;
+static  int sout=0;
 
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager
@@ -104,7 +105,6 @@ public class SplashActivity extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-
         rotateLoading = findViewById(R.id.rotateloading);
         rotateLoading.start();
 
@@ -144,6 +144,11 @@ public class SplashActivity extends AppCompatActivity {
                     // This method will be executed once the timer is over
                     // Start your app main activity
 
+            /*        if(sout==1) {
+                        signOut();
+
+                    }
+else*/
                     signIn();
                     rotateLoading.stop();
 
@@ -247,6 +252,7 @@ public class SplashActivity extends AppCompatActivity {
 
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
+
     }
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~onActivityResult
@@ -303,7 +309,6 @@ public class SplashActivity extends AppCompatActivity {
                             editor.putString("name",nam);
 
                             editor.apply();
-
                             Log.e("NAMELOGIN", user.getDisplayName());
 
                             // Sign in success, update UI with the signed-in user's information
@@ -322,6 +327,35 @@ public class SplashActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
+
+
+    private void signOut() {
+        mAuth.signOut();
+
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+
+        mGoogleApiClient = new GoogleApiClient.Builder(SplashActivity.this)
+                .enableAutoManage(SplashActivity.this /* FragmentActivity */, new GoogleApiClient.OnConnectionFailedListener() {
+                    @Override
+                    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+                        Toast.makeText(SplashActivity.this, "Error!", Toast.LENGTH_LONG).show();
+                    }
+                })
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                .build();
+
+
+
+    }
+
+
+
+
 }
 
 
