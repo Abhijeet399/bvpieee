@@ -115,7 +115,7 @@ android:textSize="16dp"
 
         <TextView
             android:id="@+id/other"
-            android:layout_width="match_parent"
+            android:layout_width="409dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/easyflip"
             android:layout_marginBottom="10dp"
@@ -125,10 +125,64 @@ android:textSize="16dp"
             android:text="See all Events ->"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="@color/white" />
+
+
+        <TextView
+            android:id="@+id/setevent"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/other"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="2dp"
+            android:gravity="center"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
+            android:text="SET NEXT EVENT"
+            android:visibility="gone"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/addieee"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/setevent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="2dp"
+            android:gravity="center"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
+            android:visibility="gone"
+
+            android:text="ADD IEEE members"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/white" />
+
+
+        <TextView
+            android:id="@+id/addads"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/addieee"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="2dp"
+            android:gravity="center"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
+            android:visibility="gone"
+
+            android:text="ADD advertisement"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/white" />
+
+
+
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/other"
+            android:layout_below="@+id/addads"
             android:orientation="vertical">
 
             <Button
@@ -330,7 +384,7 @@ android:padding="4dp"
                 android:id="@+id/adpic"
                 android:layout_width="400dp"
                 android:layout_height="450dp"
-                android:layout_below="@+id/sp"
+                android:layout_below="@+id/sp "
                 android:layout_gravity="center_horizontal"
                 android:layout_marginEnd="12dp"
                 android:layout_marginStart="12dp"

@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,12 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -70,7 +77,7 @@ public class ListViewAdapter1 extends BaseAdapter {
     TextView by,time,venue;
         RelativeLayout rl;
 LinearLayout poster;
-ImageView posterimg;
+ImageView posterimg,delete;
 
     }
     @Override
@@ -85,7 +92,11 @@ ImageView posterimg;
             holder=new ViewHolder();
 
             holder.name=(TextView)convertView.findViewById(R.id.name);
+holder.delete=convertView.findViewById(R.id.imageView2);
+if (Main2Activity.verified_admin==1)
+holder.delete.setVisibility(View.VISIBLE);
 
+    //holder.registerhere.setVisibility(View.VISIBLE);
 holder.registerhere=(TextView)convertView.findViewById(R.id.registerhere);
             holder.date=(TextView)convertView.findViewById(R.id.datee);
             holder.by=convertView.findViewById(R.id.byy);
@@ -103,6 +114,29 @@ holder.registerhere=(TextView)convertView.findViewById(R.id.registerhere);
             holder.time.setText(time.get(position));
             holder.venue.setText(venue.get(position));
 
+holder.delete.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        Query applesQuery = ref.child("All events").orderByChild("topic").equalTo(name.get(position));
+
+        applesQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot appleSnapshot: dataSnapshot.getChildren()) {
+                    appleSnapshot.getRef().removeValue();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("ohh", "onCancelled", databaseError.toException());
+            }
+        });
+
+    }
+});
             SpannableString content = new SpannableString("  Register here ->");
             content.setSpan(new UnderlineSpan(), 2, content.length(), 0);
             holder.registerhere.setText(content);
