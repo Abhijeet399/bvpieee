@@ -1115,106 +1115,117 @@ adads.setVisibility(View.VISIBLE);
                     }
                 });
 
-                addieee.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        LayoutInflater inflater = getLayoutInflater();
-                        final View alertLayout = inflater.inflate(R.layout.addieeemail, null);
-
-                        final EditText emailid = alertLayout.findViewById(R.id.mail);
-                        //  final ImageView close = alertLayout.findViewById(R.id.close);
-                        Button done = alertLayout.findViewById(R.id.done);
-
-                        AlertDialog.Builder alert = new AlertDialog.Builder(Main2Activity.this);
-
-                        // this is set the view from XML inside AlertDialog
-                        alert.setView(alertLayout);
-
-
-                        done.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-
-
-                                {
-                                    FirebaseDatabase database = FirebaseDatabase.getInstance();
-                                    DatabaseReference myRef = database.getReference("ieee_emails");
-                                    assert apnamail != null;
-                                    myRef.child(String.valueOf(myRef.hashCode())).setValue(emailid.getText().toString());
-
-                                }
-
-                            }
-                        });
-
-                        final AlertDialog dialog = alert.create();
-                        dialog.show();
-
-
-                    }
-                });
-
-
-
-
-                addads.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        LayoutInflater inflater = getLayoutInflater();
-                        final View alertLayout = inflater.inflate(R.layout.addads, null);
-
-                        final EditText adss = alertLayout.findViewById(R.id.website);
-                      //  final ImageView close = alertLayout.findViewById(R.id.close);
-                        Button done = alertLayout.findViewById(R.id.done);
-
-                        Button adpic = alertLayout.findViewById(R.id.adpic);
-
-                        AlertDialog.Builder alert = new AlertDialog.Builder(Main2Activity.this);
-
-                        // this is set the view from XML inside AlertDialog
-                        alert.setView(alertLayout);
-
-adpic.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
-
-
-    }
-});
-                        final AlertDialog dialog=alert.create();
-                        done.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-
-
-{                                    FirebaseDatabase database = FirebaseDatabase.getInstance();
-                                    DatabaseReference myRef = database.getReference("ad");
-                                    myRef.child("link").setValue(downloadlinkads);
-    myRef.child("ad").setValue( adss.getText().toString());
-    dialog.cancel();
-    Toast.makeText(getApplicationContext(),"Ad added",Toast.LENGTH_LONG).show();
-                                }
-
-                            }
-                        });
-                        dialog.show();
-
-
-                    }
-                });
-
-
-            }
+                         }
 
 
         });
+
+
+
+
+        addieee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                LayoutInflater inflater = getLayoutInflater();
+                final View alertLayout = inflater.inflate(R.layout.addieeemail, null);
+
+                final EditText emailid = alertLayout.findViewById(R.id.mail);
+                //  final ImageView close = alertLayout.findViewById(R.id.close);
+                Button done = alertLayout.findViewById(R.id.done);
+
+                AlertDialog.Builder alert = new AlertDialog.Builder(Main2Activity.this);
+
+                // this is set the view from XML inside AlertDialog
+                alert.setView(alertLayout);
+
+
+                done.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+
+                        {
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference myRef = database.getReference("ieee_emails");
+                            assert apnamail != null;
+                            myRef.child(String.valueOf(myRef.hashCode())).setValue(emailid.getText().toString());
+
+                        }
+
+                    }
+                });
+
+                final AlertDialog dialog = alert.create();
+                dialog.show();
+
+
+            }
+        });
+
+
+
+
+        addads.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                LayoutInflater inflater = getLayoutInflater();
+                final View alertLayout = inflater.inflate(R.layout.addads, null);
+
+                final EditText adss = alertLayout.findViewById(R.id.website);
+                //  final ImageView close = alertLayout.findViewById(R.id.close);
+                Button done = alertLayout.findViewById(R.id.done);
+
+                Button adpic = alertLayout.findViewById(R.id.adpic);
+
+                AlertDialog.Builder alert = new AlertDialog.Builder(Main2Activity.this);
+
+                // this is set the view from XML inside AlertDialog
+                alert.setView(alertLayout);
+
+                adpic.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Intent intent = new Intent();
+                        intent.setType("image/*");
+                        intent.setAction(Intent.ACTION_GET_CONTENT);
+                        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
+
+
+                    }
+                });
+                final AlertDialog dialog=alert.create();
+                done.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+
+                        {                                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference myRef = database.getReference("ad");
+                            myRef.child("ad").setValue(downloadlinkads);
+                            myRef.child("link").setValue( adss.getText().toString());
+                            dialog.cancel();
+                            Toast.makeText(getApplicationContext(),"Ad added",Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                });
+                dialog.show();
+
+
+            }
+        });
+
+
+
+
+
+
+
+
+
     }
 
 

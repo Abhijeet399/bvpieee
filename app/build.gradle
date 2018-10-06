@@ -6,8 +6,8 @@ android {
         applicationId "com.jskgmail.bvpieee"
         minSdkVersion 19
         targetSdkVersion 26
-        versionCode 26
-        versionName "1.17"
+        versionCode 27
+        versionName "1.171"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         lintOptions {
