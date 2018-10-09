@@ -164,27 +164,24 @@ public class Main2Activity extends AppCompatActivity
 
 
         }
+        TextView addnextevent = findViewById(R.id.setevent);
+        TextView addieee = findViewById(R.id.addieee);
+        TextView adads = findViewById(R.id.addads);
 
         String ver1 = prefs.getString("admin", null);
 
         if (ver1 != null && ver1.equals("1")) {
             verified_admin = 1;
-        }
-
-        TextView addnextevent = findViewById(R.id.setevent);
-        TextView addieee = findViewById(R.id.addieee);
-        TextView adads = findViewById(R.id.addads);
-
-
-        if (verified_ieee == 0&&verified_admin==0)
-            checkemails();
-
-        if (verified_admin==1) {
             addieee.setVisibility(View.VISIBLE);
             addnextevent.setVisibility(View.VISIBLE);
-adads.setVisibility(View.VISIBLE);
-admins();
+            adads.setVisibility(View.VISIBLE);
+
         }
+        else checkadmin();
+
+
+        if (verified_ieee == 0)
+            checkemails();
 
 admins();
         SharedPreferences prefs1 = getSharedPreferences("nxtevent", MODE_PRIVATE);
@@ -203,6 +200,7 @@ admins();
         datee.setText(date);
         timee.setText(time);
         topicc.setText(topic);
+
         //    timee.setText(time);
 
      /*   EasyFlipView easyFlipView = (EasyFlipView) findViewById(R.id.easyflip);
@@ -795,7 +793,56 @@ admins();
         }
     }
 
+void checkadmin()
+{
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
 
+    DatabaseReference myRef1 = database.getReference("admin");
+
+    //   myRef.child("1").setValue("jsk1961998@gmail.com");
+    //   myRef.child("2").setValue("82gurcharansingh@gmail.com");
+
+    myRef1.addValueEventListener(new ValueEventListener() {
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+            // This method is called once with the initial value and again
+            // whenever data at this location is updated.
+            for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                String value = dataSnapshot1.getValue(String.class);
+                SharedPreferences prefs = getSharedPreferences("ieee", MODE_PRIVATE);
+                String apnamail = prefs.getString("mail", null);
+                assert value != null;
+                if (value.equals(apnamail)) {
+                    verified_admin = 1;
+
+                    SharedPreferences.Editor editor = getSharedPreferences("ieee", MODE_PRIVATE).edit();
+                    editor.putString("admin", "1");
+
+
+                    editor.apply();
+
+                    TextView addnextevent = findViewById(R.id.setevent);
+                    TextView addieee = findViewById(R.id.addieee);
+                    TextView adads = findViewById(R.id.addads);
+
+                    addieee.setVisibility(View.VISIBLE);
+                    addnextevent.setVisibility(View.VISIBLE);
+                    adads.setVisibility(View.VISIBLE);
+
+
+                }
+            }
+        }
+
+        @Override
+        public void onCancelled(DatabaseError error) {
+            // Failed to read value
+        }
+    });
+
+
+
+}
     void checkemails() {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("ieee_emails");
@@ -855,8 +902,7 @@ admins();
 
                         TextView addnextevent = findViewById(R.id.setevent);
                         TextView addieee = findViewById(R.id.addieee);
-                        TextView adads = findViewById(R.id.addads
-                        );
+                        TextView adads = findViewById(R.id.addads);
 
                             addieee.setVisibility(View.VISIBLE);
                             addnextevent.setVisibility(View.VISIBLE);
@@ -1139,6 +1185,7 @@ adads.setVisibility(View.VISIBLE);
                 // this is set the view from XML inside AlertDialog
                 alert.setView(alertLayout);
 
+                final AlertDialog dialog = alert.create();
 
                 done.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -1150,13 +1197,14 @@ adads.setVisibility(View.VISIBLE);
                             DatabaseReference myRef = database.getReference("ieee_emails");
                             assert apnamail != null;
                             myRef.child(String.valueOf(myRef.hashCode())).setValue(emailid.getText().toString());
+                            Toast.makeText(getApplicationContext(),"Email added successfully",Toast.LENGTH_LONG).show();
+                            dialog.cancel();
 
                         }
 
                     }
                 });
 
-                final AlertDialog dialog = alert.create();
                 dialog.show();
 
 

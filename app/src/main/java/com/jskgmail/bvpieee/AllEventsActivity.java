@@ -178,10 +178,11 @@ aa.removeValue();
 });
 */
 
-
+        final int[] stop = {0};
         addevent.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
+                                            stop[0] =1;
 
 
                                             LayoutInflater inflater = getLayoutInflater();
@@ -212,6 +213,13 @@ aa.removeValue();
                                             category1.add("IAS");
                                             category1.add("WIE");
                                             category1.add("HKN");
+                                            category1.add("CODE-X");
+                                            category1.add("DRISHTI");
+                                            category1.add("RAU");
+                                            category1.add("BQC");
+                                            category1.add("E-CELL");
+                                            category1.add("GAMMA");
+                                            category1.add("MAKERS");
                                             category1.add("Other");
 
                                             ArrayAdapter<String> dataAdapter1 = new ArrayAdapter<String>(AllEventsActivity.this, android.R.layout.simple_spinner_item, category1);
@@ -250,7 +258,19 @@ aa.removeValue();
 
                                                 @Override
                                                 public void onClick(DialogInterface dialog, int which) {
-int chh=0;
+
+int chh=0;                                                    String relink;
+
+                                                    String byy=by.getText().toString();
+                                                    String datee=date.getText().toString();
+                                                    String timee=time.getText().toString();
+                                                    String reglinkk=reglink.getText().toString();
+                                                    String topicc=topic.getText().toString();
+                                                    String venuee=venue.getText().toString();
+
+Toast.makeText(getApplicationContext(),"Event added successfully! Come back to check!!",Toast.LENGTH_LONG).show();
+                                              //      finish();
+
                                                     if (ch_pos[0] == 0) {
                                                         chname = "cs";chh=0;
                                                     } else if (ch_pos[0] == 1) {
@@ -262,28 +282,45 @@ int chh=0;
                                                     } else if (ch_pos[0] == 4) {
                                                         chname = "hkn";chh=0;
                                                     } else if (ch_pos[0] == 5) {
-chh=1;
+                                                        chname = "codex";chh=0;
+
+                                                    }
+                                                    else if (ch_pos[0] == 6) {
+                                                        chname = "drishti";chh=0;
+                                                    }else if (ch_pos[0] == 7) {
+                                                        chname = "rau";chh=0;
+                                                    }else if (ch_pos[0] == 8) {
+                                                        chname = "bqc";chh=0;
+                                                    }else if (ch_pos[0] == 9) {
+                                                        chname = "ecell";chh=0;
+                                                    }else if (ch_pos[0] == 10) {
+                                                        chname = "gamma";chh=0;
+                                                    }else if (ch_pos[0] == 11) {
+                                                        chname = "makers";chh=0;
+                                                    }
+                                                    else if (ch_pos[0] == 12) {
+                                                        chh=1;
                                                     }
                                                     DatabaseReference aa;
                                                     if (chh==1)
                                                         aa = myRef.push();
                                                     else
                                                         aa = myRef.child(chname);
-                                                    aa.child("by").setValue(by.getText().toString());
-                                                    aa.child("date").setValue(date.getText().toString());
-                                                    aa.child("time").setValue(time.getText().toString());
-                                                    String relink;
 
-                                                    if (reglink.getText().toString().equals(""))
-                                                        relink="na";
-                                                    else
-                                                        relink=reglink.getText().toString();
+                                                    {
+                                                        if (reglinkk.equals(""))
+                                                            relink = "na";
+                                                        else
+                                                            relink = reglinkk;
 
-                                                    aa.child("link").setValue(relink);
-                                                    aa.child("pic").setValue(downloadUrl);
-                                                    aa.child("topic").setValue(topic.getText().toString());
-                                                    aa.child("venue").setValue(venue.getText().toString());
-
+                                                        aa.child("by").setValue(byy);
+                                                        aa.child("date").setValue(datee);
+                                                        aa.child("time").setValue(timee);
+                                                        aa.child("link").setValue(relink);
+                                                        aa.child("pic").setValue(downloadUrl);
+                                                        aa.child("topic").setValue(topicc);
+                                                        aa.child("venue").setValue(venuee);
+                                                    }
 
 
                                                 }
@@ -311,10 +348,14 @@ chh=1;
                                             AlertDialog dialog = alert.create();
                                             dialog.show();
                                         }
+
                                     }
 
 
 );
+
+
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("All events");
         // DatabaseReference myRef1 = myRef.child("cs");
@@ -326,6 +367,7 @@ chh=1;
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
 
+                if (stop[0]!=1)
 
                 //  arrayList3.add("cs");
                 //    arrayList4.add("link");

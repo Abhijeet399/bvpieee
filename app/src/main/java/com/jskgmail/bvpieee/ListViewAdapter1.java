@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -126,6 +127,8 @@ holder.delete.setOnClickListener(new View.OnClickListener() {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot appleSnapshot: dataSnapshot.getChildren()) {
                     appleSnapshot.getRef().removeValue();
+                    context.finish();
+                    Toast.makeText(context,"Removed the event!",Toast.LENGTH_LONG).show();
                 }
             }
 
