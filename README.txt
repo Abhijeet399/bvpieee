@@ -1,0 +1,4 @@
+Welcome to the app of the IEEE Student Branch of Bharati Vidyapeeth’s College of Engineering, BVPIEEE. 
+Institute of Electrical and Electronics Engineers (IEEE) is the worlds largest professional association dedicated to advancing technological innovation and excellence for the benefit of humanity.
+We at BVPIEEE have always promoted IEEE as a common platform to share knowledge through interactive sessions, seminars, field trips, conferences and have stayed true to the essence of IEEE.
+Our aim is to create a talent pool where students interact and exchange ideas, network with people from various institutions and disciplines, and most importantly, learn in the process.
